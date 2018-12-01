@@ -1,9 +1,12 @@
 #include <iostream>
 #include "Customer.h"
 #include "KomKothaKoiben.h"
+#include "Call.h"
 using namespace std;
 int main()
 {
+	KomKothaKoiben database;
+	Customer customerSaif, customerNaima, customerAzad, customerRikta;
 	PhoneNumber number1("01737552558", "GP");
 	PhoneNumber number2("01854440588", "ROBI");
 	PhoneNumber number3("01556307506", "TELETALK");
@@ -20,8 +23,6 @@ int main()
 	PhoneNumber number14("01508988766", "teletalk");
 	PhoneNumber number15("01400111222", "KomKothaKoiben");
 	PhoneNumber number16("01969337634", "banglalink");
-
-	Customer customerSaif, customerNaima, customerAzad, customerRikta, customerJenny, customerShahad, customerKashif, customerShehjad;
 
 	customerSaif.set_name("shaif", "rahi");
 	customerSaif.set_NID("19921234567");
@@ -48,49 +49,8 @@ int main()
 	customerRikta.set_NID("19746536271");
 	customerRikta.add_number(number8);
 
-	customerJenny.set_name("Rehab", "Jenny");
-	customerJenny.set_NID("19914960867");
-	customerJenny.add_number(number9);
-	customerJenny.add_number(number10);
-	customerJenny.add_number(number1);
-	customerJenny.add_number(number2);
-	customerJenny.add_number(number7);
-
-	customerShahad.set_name("abdullah", "shahad");
-	customerShahad.set_NID("96830001341");
-	customerShahad.add_number(number11);
-	customerShahad.add_number(number12);
-	customerShahad.add_number(number9);
-
-	customerKashif.set_name("Salauddin", "Ahamed");
-	customerKashif.set_NID("10011001100");
-	customerKashif.add_number(number1);
-	customerKashif.add_number(number2);
-	customerKashif.add_number(number3);
-	customerKashif.add_number(number4);
-	customerKashif.add_number(number5);
-	customerKashif.add_number(number6);
-	customerKashif.add_number(number7);
-	customerKashif.add_number(number8);
-	customerKashif.add_number(number9);
-	customerKashif.add_number(number10);
-	customerKashif.add_number(number11);
-
-	customerShehjad.set_name("abdullah", "shehjad");
-	customerShehjad.set_NID("19234299742");
-	customerShehjad.add_number(number1);
-	customerShehjad.add_number(number9);
-	customerShehjad.add_number(number13);
-	customerShehjad.add_number(number14);
-	customerShehjad.add_number(number15);
-	customerShehjad.add_number(number16);
-	customerShehjad.add_number(number3);
-	customerShehjad.add_number(number4);
-	customerShehjad.add_number(number5);
-
-
 	//operating database actions
-	KomKothaKoiben database;
+	
 	database.insert_customer(customerSaif);
 	database.insert_customer(customerNaima);
 
@@ -110,10 +70,7 @@ int main()
 	database.print_database();
 	cout << "\n\nadding five more new customers into database......." << endl;
 	database.insert_customer(customerRikta);
-	database.insert_customer(customerJenny);
-	database.insert_customer(customerShahad);
-	database.insert_customer(customerKashif);
-	database.insert_customer(customerShehjad);
+	
 	cout << "\n\nafter adding ......." << endl;
 	database.print_database();
 	cout << "\n\nDeleting phone numbers of Customer NAIMA ......." << endl;
@@ -128,9 +85,13 @@ int main()
 		}
 	}
 
-	cout << "\n\nafter deleting all numbers of customer NAIMA ......" << endl;
+	//cout << "\n\nafter deleting all numbers of customer NAIMA ......" << endl;
 
-	database.print_database();
+	//database.print_database();
+	Person p1("saif", "rahi");
+	Call call1(number1,p1,1,4250);
+	string s = call1.get_duration();
+	cout << s<<endl;
 	return 0;
 }
 

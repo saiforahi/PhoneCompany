@@ -1,5 +1,5 @@
 #include "Call.h"
-using namespace std;
+
 Call::Call()
 {
 }
@@ -10,9 +10,9 @@ Call::Call(PhoneNumber givenNumber, Person givenPerson, int relationshipNumber, 
 	fromPerson = givenPerson;
 	relationship = relationshipNumber;
 	durationInSeconds = givenDuration;
-	hours = durationInSeconds / 3600;
-	minutes = (durationInSeconds % 3600) / 60;
-	seconds = (durationInSeconds % 3600) % 60;
+	hours = givenDuration / 3600;
+	minutes = (givenDuration % 3600) / 60;
+	seconds = (givenDuration % 3600) % 60;
 }
 
 PhoneNumber Call::get_caller_number()
@@ -27,7 +27,7 @@ int Call::get_relationship()
 
 string Call::get_duration()
 {
-	return hours + ":" + minutes + ':' + seconds;
+	return to_string(hours) + ":" +to_string(minutes) + ":" +to_string(seconds);
 }
 
 
