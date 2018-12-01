@@ -10,6 +10,9 @@ Call::Call(PhoneNumber givenNumber, Person givenPerson, int relationshipNumber, 
 	fromPerson = givenPerson;
 	relationship = relationshipNumber;
 	durationInSeconds = givenDuration;
+	hours = durationInSeconds / 3600;
+	minutes = (durationInSeconds % 3600) / 60;
+	seconds = (durationInSeconds % 3600) % 60;
 }
 
 PhoneNumber Call::get_caller_number()
@@ -24,7 +27,7 @@ int Call::get_relationship()
 
 string Call::get_duration()
 {
-	return to_string(durationInSeconds / 3600) + ":" + to_string((durationInSeconds % 3600) / 60) + ':' + to_string((durationInSeconds % 3600) % 60);
+	return hours + ":" + minutes + ':' + seconds;
 }
 
 

@@ -9,6 +9,7 @@ private:
 	Person fromPerson;
 	int relationship=0;
 	int durationInSeconds = 0;
+	int hours, minutes, seconds;
 public:
 	Call();
 	Call(PhoneNumber, Person, int, int);//parameterized constructor
