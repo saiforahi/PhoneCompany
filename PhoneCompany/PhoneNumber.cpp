@@ -49,7 +49,18 @@ string PhoneNumber::get_operatorName()
 	return operatorName;
 }
 
+void PhoneNumber::enqueue_call(Call newCall)
+{
+	calls.push(newCall);
+}
+
+Call PhoneNumber::get_call()
+{
+	return calls.top();
+}
+
 void PhoneNumber::print_details()
 {
 	cout << "\t\t" << operatorName << "\t\t" << number << endl;
 }
+

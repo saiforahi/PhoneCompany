@@ -2,6 +2,9 @@
 #include <string>
 #include "PhoneNumber.h"
 #include "Person.h"
+
+
+
 class Call
 {
 private:
@@ -16,6 +19,8 @@ public:
 	PhoneNumber get_caller_number();
 	int get_relationship();
 	string get_duration();
+	bool operator<(const Call &)const;
+	bool operator>(const Call &)const;
 	~Call();//destructor
 };
 

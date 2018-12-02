@@ -90,8 +90,17 @@ int main()
 	//database.print_database();
 	Person p1("saif", "rahi");
 	Call call1(number1,p1,1,4250);
-	string s = call1.get_duration();
-	cout << s<<endl;
+	string s1 = call1.get_duration();
+
+	Person p2("rehab", "jenny");
+	Call call2(number2, p2, 2, 5250);
+	string s2 = call2.get_duration();
+	cout << s2<<endl;
+
+	number1.enqueue_call(call2);
+	number1.enqueue_call(call1);
+	Call demo = number1.get_call();
+	cout << "\n\ntop call's relationship:\t" << demo.get_relationship() << endl;
 	return 0;
 }
 
