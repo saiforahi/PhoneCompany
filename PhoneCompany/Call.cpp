@@ -35,34 +35,5 @@ Call::~Call()
 {
 }
 
-bool Call::operator <(const Call& newCall) const
-{
-	if ( relationship< newCall.relationship)
-	{
-		return true;
-	}
-	else if (relationship == newCall.relationship)
-	{
-		if (durationInSeconds < newCall.durationInSeconds)
-		{
-			return true;
-		}
-	}
-	return false;
-}
 
-bool Call::operator>(const Call & newCall) const
-{
-	if (relationship > newCall.relationship)
-	{
-		return true;
-	}
-	else if (relationship == newCall.relationship)
-	{
-		if (durationInSeconds > newCall.durationInSeconds)
-		{
-			return true;
-		}
-	}
-	return false;
-}
+

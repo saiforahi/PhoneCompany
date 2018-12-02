@@ -19,8 +19,18 @@ public:
 	PhoneNumber get_caller_number();
 	int get_relationship();
 	string get_duration();
-	bool operator<(const Call &)const;
-	bool operator>(const Call &)const;
+	bool operator<(const Call & newCall)const
+	{
+		return relationship < newCall.relationship;
+	}
+	bool operator>(const Call & newCall)const
+	{
+		return relationship > newCall.relationship;
+	}
+	bool operator == (const Call & newCall)const
+	{
+		return durationInSeconds > newCall.durationInSeconds;
+	}
 	~Call();//destructor
 };
 
