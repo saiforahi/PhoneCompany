@@ -13,7 +13,7 @@ private:
 	list<PhoneNumber>::iterator currentPos;
 public:
 	Customer();
-	Customer(string givenFirstName, string givenLastName, PhoneNumber firstNumber, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark);
+	Customer(string givenFirstName, string givenLastName, PhoneNumber firstNumber, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark, int givenDayOfBirth, int givenMonthOfBirth, int givenYearOfBirth);
 	~Customer();
 
 	void add_number(PhoneNumber);//modifier

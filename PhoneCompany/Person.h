@@ -14,7 +14,7 @@ class Person
 public:
 	Person();
 	Person(string, string, string);
-	Person(string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string,string,int,int,int);               // parameterized constructor
+	Person(string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string,int,int,int);               // parameterized constructor
 	~Person();
 
 	//list of modifiers
@@ -38,6 +38,7 @@ public:
 
 	//list of accessors
 	string get_name();
+	string get_dateOfBirth();
 	string get_fatherName();
 	string get_motherName();
 	string get_NID();

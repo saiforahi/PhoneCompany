@@ -6,9 +6,10 @@ Customer::Customer()
 	currentPos = numbers.begin();
 }
 
-Customer::Customer(string givenFirstName,  string givenLastName, PhoneNumber firstNumber, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark,int day,int month,int year)
+Customer::Customer(string givenFirstName,  string givenLastName, PhoneNumber firstNumber, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark, int givenDayOfBirth, int givenMonthOfBirth, int givenYearOfBirth)
 {
 	set_name(givenFirstName, givenLastName);
+	set_dateOfBirth(givenDayOfBirth,givenMonthOfBirth,givenYearOfBirth);
 	set_fatherName(givenFatherName);
 	set_motherName(givenMotherName);
 	set_NID(givenNID);

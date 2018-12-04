@@ -14,10 +14,13 @@ Person::Person(string givenFirstName, string givenLastName, string givenNID)
 	NID = givenNID;
 }
 
-Person::Person(string givenFirstName, string givenLastName, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark)
+Person::Person(string givenFirstName, string givenLastName, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark,int givenDayOfBirth,int givenMonthOfBirth,int givenYearOfBirth)
 {
 	firstName = givenFirstName;
 	lastName = givenLastName;
+	dateOfBirth = givenDayOfBirth;
+	monthOfBirth = givenMonthOfBirth;
+	yearOfBirth = givenYearOfBirth;
 	fatherName = givenFatherName;
 	motherName=givenMotherName;
 	NID = givenNID; 
@@ -130,6 +133,11 @@ void Person::set_specialMark(string givenMark)
 string Person::get_name()
 {
 	return firstName + " " + lastName;
+}
+
+string Person::get_dateOfBirth()
+{
+	return to_string(dateOfBirth)+"-"+to_string(monthOfBirth)+"-"+to_string(yearOfBirth);
 }
 
 string Person::get_fatherName()
