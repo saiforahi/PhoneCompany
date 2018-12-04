@@ -10,8 +10,10 @@ int main()
 	PhoneNumber number2("01854440588", "ROBI");
 	PhoneNumber number3("01556307506", "TELETALK");
 	PhoneNumber number4("01416471608", "KomKothaKoiben");
-	Customer A("Shinha","Azad", number1, "Abul Kalam Azad", "Belly","18842013333","BK023594","112453567","Dhaka","Bogra","Married","Nurzahan Azad","5 ft 5 inches","60 kg","Black","black","spot on left arm");
-	Customer B("Nurzahan", "Azad", number2, "Nannu", "Monoara", "19728014444", "BL253676", "115732987", "Bogra", "Joypurhat", "Married", "Shinha Azad", "5 ft 3 inches", "65 kg", "Black", "Gray", "11 fingers");
+	Customer A("Shinha","Azad", number1, "Abul Kalam Azad", "Belly","18842013333","BK023594","112453567","Dhaka","Bogra","Married","Nurzahan Azad","5 ft 5 inches","60 kg","Black","black","spot on left arm",12,1,1964);
+	Customer B("Nurzahan", "Azad", number2, "Nannu", "Monoara", "19728014444", "BL253676", "115732987", "Bogra", "Joypurhat", "Married", "Shinha Azad", "5 ft 3 inches", "65 kg", "Black", "Gray", "11 fingers",8,2,1974);
+	Customer C("Rehab", "Liton", number1, "Abul Kalam Azad", "Belly", "18842013333", "BK023594", "112453567", "Dhaka", "Bogra", "Married", "Nurzahan Azad", "5 ft 5 inches", "60 kg", "Black", "black", "spot on left arm", 12, 1, 1964);
+	Customer D("Nurzahan", "Azad", number2, "Nannu", "Monoara", "19728014444", "BL253676", "115732987", "Bogra", "Joypurhat", "Married", "Shinha Azad", "5 ft 3 inches", "65 kg", "Black", "Gray", "11 fingers", 8, 2, 1974);
 
 	PhoneNumber number1("01737552558", "GP");
 	PhoneNumber number2("01854440588", "ROBI");
