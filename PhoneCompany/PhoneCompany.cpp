@@ -5,7 +5,7 @@
 using namespace std;
 int main()
 {
-	KomKothaKoiben database;
+	/*KomKothaKoiben database;
 	Customer customerSaif, customerNaima, customerAzad, customerRikta;
 	PhoneNumber number1("01737552558", "GP");
 	PhoneNumber number2("01854440588", "ROBI");
@@ -87,17 +87,11 @@ int main()
 
 	//cout << "\n\nafter deleting all numbers of customer NAIMA ......" << endl;
 
-	//database.print_database();
+	//database.print_database();*/
+	PhoneNumber number1("01737552558", "GP");
 	Person p1("saif", "rahi");
-	Call call1(number1,p1,1,4250);
-	string s1 = call1.get_duration();
-
-	Person p2("rehab", "jenny");
-	Call call2(number2, p2, 2, 5250);
-	string s2 = call2.get_duration();
-	cout << s2<<endl;
-
-	number1.enqueue_call(call2);
+	Call call1(number1.get_number(),p1.get_name(),spouse);
+	
 	number1.enqueue_call(call1);
 	Call demo = number1.get_call();
 	cout << "\n\ntop call's relationship:\t" << demo.get_relationship() << endl;

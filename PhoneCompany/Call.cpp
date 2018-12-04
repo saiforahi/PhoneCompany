@@ -4,11 +4,11 @@ Call::Call()
 {
 }
 
-Call::Call(PhoneNumber givenNumber, Person givenPerson, int relationshipNumber, int givenDuration)
+Call::Call(PhoneNumber givenNumber, Person givenPerson, relationship relationshipNumber, int givenDuration)
 {
 	callerNumber = givenNumber;
 	fromPerson = givenPerson;
-	relationship = relationshipNumber;
+	relationship_type = relationshipNumber;
 	durationInSeconds = givenDuration;
 	hours = givenDuration / 3600;
 	minutes = (givenDuration % 3600) / 60;
@@ -20,16 +20,15 @@ PhoneNumber Call::get_caller_number()
 	return callerNumber;
 }
 
-int Call::get_relationship()
+relationship Call::get_relationship()
 {
-	return relationship;
+	return relationship_type;
 }
 
 string Call::get_duration()
 {
-	return to_string(hours) + ":" +to_string(minutes) + ":" +to_string(seconds);
+	return to_string(hours) + ":" + to_string(minutes) + ":" + to_string(seconds);
 }
-
 
 Call::~Call()
 {

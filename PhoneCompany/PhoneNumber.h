@@ -2,14 +2,35 @@
 #include "Call.h"
 #include <string>
 #include <queue>
+#include <functional>
 using namespace std;
+
+
+struct comparision
+{
+	bool operator()(Call c, Call v)
+	{
+		if (c.get_relationship() > v.get_relationship())
+			return true;
+		else if (c.get_relationship() == v.get_relationship())
+		{
+			if (c.get_relationship() < v.get_relationship())
+				return true;
+			else
+				return false;
+		}
+		else
+			return false;
+	}
+};
 
 class PhoneNumber
 {
 private:
-	string number, operatorName;
-	priority_queue<Call> calls;
-	
+	typedef priority_queue< Call, std::vector<Call>, comparision > queuedCalls;
+	string number;
+	string operatorName;
+	queuedCalls calls;
 public:
 	PhoneNumber();
 	PhoneNumber(string, string); //parameterized constructor
