@@ -96,9 +96,12 @@ int main()
 	Call call2(number2.get_number(), number2.get_operatorName(), p2, Sibling, 5250);
 	Call call3(number3.get_number(), number3.get_operatorName(), p3, spouse, 3250);
 	number1.enqueue_call(call1);
+	number1.enqueue_call(call2);
+	number1.enqueue_call(call3);
 	Call demo = number1.get_call();
 	cout << "\n\ntop call's relationship:\t" << demo.get_relationship() << endl;
 	cout << "top call's relationship:\t" << demo.get_duration() << endl;
+	cout << "top call's relationship:\t" << demo.get_caller().get_name() << endl;
 	return 0;
 }
 

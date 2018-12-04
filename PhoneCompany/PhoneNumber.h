@@ -8,13 +8,13 @@ using namespace std;
 
 struct comparision
 {
-	bool operator()(Call c, Call v)
+	bool operator()(Call call1, Call call2)
 	{
-		if (c.get_relationship() > v.get_relationship())
+		if (call1.get_relationship() > call2.get_relationship())
 			return true;
-		else if (c.get_relationship() == v.get_relationship())
+		else if (call1.get_relationship() == call2.get_relationship())
 		{
-			if (c.get_relationship() < v.get_relationship())
+			if (call1.get_relationship() < call2.get_relationship())
 				return true;
 			else
 				return false;
