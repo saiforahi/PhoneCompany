@@ -2,7 +2,7 @@
 #include "Call.h"
 #include <string>
 #include <queue>
-#include <functional>
+
 using namespace std;
 
 
