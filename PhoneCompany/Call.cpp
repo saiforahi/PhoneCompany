@@ -37,6 +37,81 @@ string Call::get_duration()
 	return to_string(hours) + ":" + to_string(minutes) + ":" + to_string(seconds);
 }
 
+string Call::get_caller_name()
+{
+	return fromPerson.name;
+}
+
+string Call::get_caller_NID()
+{
+	return fromPerson.NID;
+}
+
+string Call::get_caller_fatherName()
+{
+	return fromPerson.fatherName;
+}
+
+string Call::get_caller_motherName()
+{
+	return fromPerson.motherName;
+}
+
+string Call::get_caller_passportNo()
+{
+	return fromPerson.passportNo;
+}
+
+string Call::get_caller_drivingLicenseNo()
+{
+	return fromPerson.drivingLicenseNo;
+}
+
+string Call::get_caller_presentAddress()
+{
+	return fromPerson.presentAddress;
+}
+
+string Call::get_caller_permanentAddress()
+{
+	return fromPerson.permanentAddress;
+}
+
+string Call::get_caller_maritalStatus()
+{
+	return fromPerson.maritalStatus;
+}
+
+string Call::get_caller_spouseName()
+{
+	return fromPerson.spouseName;
+}
+
+string Call::get_caller_height()
+{
+	return fromPerson.height;
+}
+
+string Call::get_caller_weight()
+{
+	return fromPerson.weight;
+}
+
+string Call::get_caller_hairColor()
+{
+	return fromPerson.hairColor;
+}
+
+string Call::get_caller_eyeColor()
+{
+	return fromPerson.eyeColor;
+}
+
+string Call::get_caller_specialMark()
+{
+	return fromPerson.specialMark;
+}
+
 Call::~Call()
 {
 }
