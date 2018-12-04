@@ -7,12 +7,32 @@ Person::Person()
 {
 }
 
-Person::Person(string givenFirstName, string GivenLastName)
+Person::Person(string givenFirstName, string givenLastName, string givenNID)
 {
 	firstName = givenFirstName;
-	lastName = GivenLastName;
+	lastName = givenLastName;
+	NID = givenNID;
 }
 
+Person::Person(string givenFirstName, string givenLastName, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark)
+{
+	firstName = givenFirstName;
+	lastName = givenLastName;
+	fatherName = givenFatherName;
+	motherName=givenMotherName;
+	NID = givenNID; 
+	passportNo = givenPassportNo;
+	drivingLicenseNo=givenDrivingLicense;
+	presentAddress = givenPresentAddress;
+	permanentAddress=givenPermanentAddress;        //fields of person class
+	maritalStatus = givenMaritalStatus;
+	spouseName=givenSpouseName;
+	height = givenHeight;
+	weight = givenWeight;
+	hairColor = givenHairColor;
+	eyeColor = givenEyeColor;
+	specialMark=givenSpecialMark;
+}
 
 Person::~Person()
 {
@@ -22,6 +42,13 @@ void Person::set_name(string givenFirstName, string givenLastName)
 {
 	firstName = givenFirstName;
 	lastName = givenLastName;
+}
+
+void Person::set_dateOfBirth(int day, int month, int year)
+{
+	dateOfBirth = day;
+	monthOfBirth = month;
+	yearOfBirth = year;
 }
 
 void Person::set_fatherName(string givenFatherName)

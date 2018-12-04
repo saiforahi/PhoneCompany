@@ -6,6 +6,27 @@ Customer::Customer()
 	currentPos = numbers.begin();
 }
 
+Customer::Customer(string givenFirstName,  string givenLastName, PhoneNumber firstNumber, string givenFatherName, string givenMotherName, string givenNID, string givenPassportNo, string givenDrivingLicense, string givenPresentAddress, string givenPermanentAddress, string givenMaritalStatus, string givenSpouseName, string givenHeight, string givenWeight, string givenHairColor, string givenEyeColor, string givenSpecialMark,int day,int month,int year)
+{
+	set_name(givenFirstName, givenLastName);
+	set_fatherName(givenFatherName);
+	set_motherName(givenMotherName);
+	set_NID(givenNID);
+	set_passportNo(givenPassportNo);
+	set_drivingLicense(givenDrivingLicense);
+	set_presentAddress(givenPresentAddress);
+	set_permanentAddress(givenPermanentAddress);
+	set_presentAddress(givenPresentAddress);
+	set_maritalStatus(givenMaritalStatus);
+	set_spouseName(givenSpouseName);
+	set_height(givenHeight);
+	set_weight(givenWeight);
+	set_hairColor(givenHairColor);
+	set_eyeColor(givenEyeColor);
+	set_specialMark(givenSpecialMark);
+	add_number(firstNumber);
+}
+
 
 Customer::~Customer()
 {

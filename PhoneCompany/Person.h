@@ -4,6 +4,7 @@ using namespace std;
 class Person
 {
 	string firstName, lastName;
+	int dateOfBirth,monthOfBirth,yearOfBirth;
 	string fatherName, motherName;
 	string NID, passportNo, drivingLicenseNo;
 	string presentAddress, permanentAddress;        //fields of person class
@@ -12,12 +13,14 @@ class Person
 	string specialMark;
 public:
 	Person();
-	Person(string, string);               // parameterized constructor
+	Person(string, string, string);
+	Person(string, string, string, string, string, string, string, string, string, string, string, string, string, string, string, string,string,int,int,int);               // parameterized constructor
 	~Person();
 
 	//list of modifiers
 
 	void set_name(string, string);
+	void set_dateOfBirth(int,int,int);
 	void set_fatherName(string);
 	void set_motherName(string);
 	void set_NID(string);
