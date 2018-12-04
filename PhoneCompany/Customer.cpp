@@ -153,6 +153,12 @@ void Customer::print_details()
 	reset_number_list();
 	cout << "\n\tPrinting details for customer " << get_name() << endl;
 	cout << "\n\tNID:\t" << get_NID() << "\t\ttotal " << get_length() << " numbers\n" << endl;
+	cout << "Father:\t" << get_fatherName() << endl;
+	cout << "Mother:\t" << get_motherName()<< endl;
+	cout << "Marital Status:\t" << get_maritalStatus() << endl;
+	cout << "Spouse:\t" << get_spouseName() << endl;
+	cout << "present Address:\t" << get_presentAddress() << endl;
+	cout << "Permanent Address:\t" << get_permanentAddress() << endl;
 	while (hasNextNumber())
 	{
 		getNextNumber().print_details();

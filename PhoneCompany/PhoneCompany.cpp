@@ -10,15 +10,6 @@ int main()
 	PhoneNumber number2("01854440588", "ROBI");
 	PhoneNumber number3("01556307506", "TELETALK");
 	PhoneNumber number4("01416471608", "KomKothaKoiben");
-	Customer A("Shinha","Azad", number1, "Abul Kalam Azad", "Belly","18842013333","BK023594","112453567","Dhaka","Bogra","Married","Nurzahan Azad","5 ft 5 inches","60 kg","Black","black","spot on left arm",12,1,1964);
-	Customer B("Nurzahan", "Azad", number2, "Nannu", "Monoara", "19728014444", "BL253676", "115732987", "Bogra", "Joypurhat", "Married", "Shinha Azad", "5 ft 3 inches", "65 kg", "Black", "Gray", "11 fingers",8,2,1974);
-	Customer C("Rehab", "Liton", number1, "Abul Kalam Azad", "Belly", "18842013333", "BK023594", "112453567", "Dhaka", "Bogra", "Married", "Nurzahan Azad", "5 ft 5 inches", "60 kg", "Black", "black", "spot on left arm", 12, 1, 1964);
-	Customer D("Nurzahan", "Azad", number2, "Nannu", "Monoara", "19728014444", "BL253676", "115732987", "Bogra", "Joypurhat", "Married", "Shinha Azad", "5 ft 3 inches", "65 kg", "Black", "Gray", "11 fingers", 8, 2, 1974);
-
-	PhoneNumber number1("01737552558", "GP");
-	PhoneNumber number2("01854440588", "ROBI");
-	PhoneNumber number3("01556307506", "TELETALK");
-	PhoneNumber number4("01416471608", "KomKothaKoiben");
 	PhoneNumber number5("01786490167", "GP");
 	PhoneNumber number6("01999900439", "banglalink");
 	PhoneNumber number7("01856561345", "robi");
@@ -31,6 +22,27 @@ int main()
 	PhoneNumber number14("01508988766", "teletalk");
 	PhoneNumber number15("01400111222", "KomKothaKoiben");
 	PhoneNumber number16("01969337634", "banglalink");
+	Customer A("Shinha","Azad", number1, "Abul Kalam Azad", "Belly","18842013333","BK023594","112453567","Dhaka","Bogra","Married","Nurzahan Azad","5 ft 5 inches","60 kg","Black","black","spot on left arm",12,1,1964);
+	Customer B("Nurzahan", "Azad", number5, "Nannu", "Monoara", "19728014444", "BL253676", "115732987", "Bogra", "Joypurhat", "Married", "Shinha Azad", "5 ft 3 inches", "65 kg", "Black", "Gray", "11 fingers",8,2,1974);
+	Customer C("Rehab", "Liton", number9, "Liton", "Bepary", "19945017777", "BZ032599", "131043267", "Dhaka", "Tripoli", "Married", "Shaif Azad Rahi", "5 ft 5 inches", "55 kg", "Black", "black", "Dimple", 5, 6, 1992);
+	Customer D("Naima", "Esha", number13, "Shinha Azad", "Nurzahan Azad", "19987098888", "BM023366", "191053333", "Dhaka", "Bogra", "Single", "Not Applicable", "5 ft 3 inches", "55 kg", "Black", "Black", "BookWorm", 11, 2, 1998);
+	
+	database.insert_customer(A);
+	database.insert_customer(B);
+	database.insert_customer(C);
+	database.insert_customer(D);
+	A.add_number(number2);
+	A.add_number(number3);
+	A.add_number(number4);
+	B.add_number(number6);
+	B.add_number(number7);
+	B.add_number(number8);
+	C.add_number(number10);
+	C.add_number(number11);
+	C.add_number(number12);
+	D.add_number(number14);
+	D.add_number(number15);
+	D.add_number(number16);
 
 	
 
