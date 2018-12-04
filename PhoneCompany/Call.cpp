@@ -1,5 +1,6 @@
 #include "Call.h"
-
+#include <iostream>
+using namespace std;
 Call::Call()
 {
 }
@@ -60,6 +61,11 @@ void Call::update_duration(int newValue)
 	hours = durationInSeconds / 3600;
 	minutes = (durationInSeconds % 3600) / 60;
 	seconds = (durationInSeconds % 3600) % 60;
+}
+
+void Call::print_call()
+{
+	cout <<"\t"<< relationship(relationshipType)<<"\t"<<get_duration() << endl;
 }
 
 Call::~Call()

@@ -6,7 +6,13 @@ using namespace std;
 int main()
 {
 	KomKothaKoiben database;
-	Customer customerSaif, customerNaima, customerAzad, customerRikta;
+	Customer A, B, C, D;
+
+
+
+
+	
+	
 	PhoneNumber number1("01737552558", "GP");
 	PhoneNumber number2("01854440588", "ROBI");
 	PhoneNumber number3("01556307506", "TELETALK");

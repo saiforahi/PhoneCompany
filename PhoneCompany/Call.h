@@ -27,6 +27,7 @@ public:
 	int get_durationInSeconds();//accessor
 	Person get_caller();//modifier
 	void set_duration(int);//modifier
-	void update_duration(int);
+	void update_duration(int);//modifier
+	void print_call();
 	~Call();//destructor
 };

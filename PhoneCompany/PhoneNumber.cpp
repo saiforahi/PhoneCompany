@@ -70,6 +70,19 @@ Call PhoneNumber::get_next_call()
 	return calls.top();
 }
 
+void PhoneNumber::print_queued_calls()
+{
+	cout << "\t\t" << operatorName << "\t\t" << number << endl;
+	queuedCalls demo = calls;
+	Call dummy;
+	while (!demo.empty())
+	{
+		dummy=demo.top();
+		dummy.print_call();
+		demo.pop();
+	}
+}
+
 void PhoneNumber::print_details()
 {
 	cout << "\t\t" << operatorName << "\t\t" << number << endl;

@@ -45,6 +45,7 @@ public:
 	
 	Call get_call();
 	Call get_next_call();
+	void print_queued_calls();
 	void print_details();
 };
 
