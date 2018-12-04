@@ -44,6 +44,7 @@ public:
 	string get_operatorName();
 	void enqueue_call(Call);
 	Call get_call();
+	Call get_next_call();
 	void print_details();
 };
 

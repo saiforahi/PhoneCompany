@@ -56,6 +56,17 @@ void PhoneNumber::enqueue_call(Call newCall)
 
 Call PhoneNumber::get_call()
 {
+	if (!calls.empty())
+	{
+		Call demo = calls.top();
+		calls.pop();
+		return demo;
+	}
+	return Call();
+}
+
+Call PhoneNumber::get_next_call()
+{
 	return calls.top();
 }
 

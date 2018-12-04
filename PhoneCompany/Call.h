@@ -25,7 +25,6 @@ public:
 	relationship get_relationship();
 	string get_duration();
 	Person get_caller();
-	
 
 	~Call();//destructor
 };
