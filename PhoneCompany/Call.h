@@ -20,12 +20,13 @@ public:
 	Call();
 	Call(string,string, Person, relationship,int);//parameterized constructor
 	
-	string get_caller_number();
-	string get_caller_operator();
-	relationship get_relationship();
-	string get_duration();
-	int get_durationInSeconds();
-	Person get_caller();
+	string get_caller_number();//accessor
+	string get_caller_operator();//accessor
+	relationship get_relationship();//accessor
+	string get_duration();//accessor
+	int get_durationInSeconds();//accessor
+	Person get_caller();//modifier
+	void set_duration(int);
 
 	~Call();//destructor
 };

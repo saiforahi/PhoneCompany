@@ -46,6 +46,14 @@ Person Call::get_caller()
 	return caller;
 }
 
+void Call::set_duration(int newValue)
+{
+	durationInSeconds = newValue;
+	hours = durationInSeconds / 3600;
+	minutes = (durationInSeconds % 3600) / 60;
+	seconds = (durationInSeconds % 3600) % 60;
+}
+
 Call::~Call()
 {
 }

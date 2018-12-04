@@ -37,12 +37,12 @@ public:
 	~PhoneNumber();
 
 	void set_operatorName(string); //modifier
-
+	void enqueue_call(Call);
+	
 	//list of accessors
-
 	string get_number();
 	string get_operatorName();
-	void enqueue_call(Call);
+	
 	Call get_call();
 	Call get_next_call();
 	void print_details();
