@@ -36,6 +36,11 @@ string Call::get_duration()
 	return to_string(hours) + ":" + to_string(minutes) + ":" + to_string(seconds);
 }
 
+int Call::get_durationInSeconds()
+{
+	return durationInSeconds;
+}
+
 Person Call::get_caller()
 {
 	return caller;

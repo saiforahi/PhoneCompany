@@ -24,6 +24,7 @@ public:
 	string get_caller_operator();
 	relationship get_relationship();
 	string get_duration();
+	int get_durationInSeconds();
 	Person get_caller();
 
 	~Call();//destructor

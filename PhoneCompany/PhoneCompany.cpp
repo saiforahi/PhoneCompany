@@ -93,15 +93,15 @@ int main()
 	Person p3("Rehab", "Jenny");
 	Person p4("Nurzahan", "Azad");
 	Call call1(number10.get_number(), number10.get_operatorName(),p4, Parent, 4250);
-	Call call2(number2.get_number(), number2.get_operatorName(), p2, Sibling, 5250);
-	Call call3(number3.get_number(), number3.get_operatorName(), p3, spouse, 3250);
+	Call call2(number2.get_number(), number2.get_operatorName(), p2, Parent, 5250);
+	Call call3(number3.get_number(), number3.get_operatorName(), p3, Sibling, 3250);
 	number1.enqueue_call(call1);
 	number1.enqueue_call(call2);
 	number1.enqueue_call(call3);
 	Call demo = number1.get_call();
-	cout << "\n\ntop call's relationship:\t" << demo.get_relationship() << endl;
-	cout << "top call's relationship:\t" << demo.get_duration() << endl;
-	cout << "top call's relationship:\t" << demo.get_caller().get_name() << endl;
+	cout << "\n\npoped call's relationship:\t" << demo.get_relationship() << endl;
+	cout << "poped call's duration:\t" << demo.get_duration() << endl;
+	cout << "poped call's relationship:\t" << demo.get_caller().get_name() << endl;
 	return 0;
 }
 

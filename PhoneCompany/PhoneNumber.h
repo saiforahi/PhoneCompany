@@ -6,7 +6,7 @@
 using namespace std;
 
 
-struct comparision
+struct call_compare
 {
 	bool operator()(Call call1, Call call2)
 	{
@@ -14,7 +14,7 @@ struct comparision
 			return true;
 		else if (call1.get_relationship() == call2.get_relationship())
 		{
-			if (call1.get_relationship() < call2.get_relationship())
+			if (call1.get_durationInSeconds() < call2.get_durationInSeconds())
 				return true;
 			else
 				return false;
@@ -27,7 +27,7 @@ struct comparision
 class PhoneNumber
 {
 private:
-	typedef priority_queue< Call, std::vector<Call>, comparision > queuedCalls;
+	typedef priority_queue< Call, std::vector<Call>, call_compare > queuedCalls;
 	string number;
 	string operatorName;
 	queuedCalls calls;
