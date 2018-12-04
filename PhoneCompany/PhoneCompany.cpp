@@ -89,11 +89,16 @@ int main()
 
 	//database.print_database();
 	Person p1("saif", "rahi");
-	
-	Call call1(number10.get_number(), number10.get_operatorName(), p1.get_name(), p1.get_NID(), Aunt, 4250);
+	Person p2("Naim", "Esha");
+	Person p3("Rehab", "Jenny");
+	Person p4("Nurzahan", "Azad");
+	Call call1(number10.get_number(), number10.get_operatorName(),p4, Parent, 4250);
+	Call call2(number2.get_number(), number2.get_operatorName(), p2, Sibling, 5250);
+	Call call3(number3.get_number(), number3.get_operatorName(), p3, spouse, 3250);
 	number1.enqueue_call(call1);
 	Call demo = number1.get_call();
 	cout << "\n\ntop call's relationship:\t" << demo.get_relationship() << endl;
+	cout << "top call's relationship:\t" << demo.get_duration() << endl;
 	return 0;
 }
 
