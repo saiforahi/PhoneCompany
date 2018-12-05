@@ -21,6 +21,7 @@ public:
 	void make_empty();//modifier
 	void delete_number(PhoneNumber);//modifier
 	void change_operatorName(PhoneNumber);//modifier
+	void enqueue_new_call(Call);
 
 	bool is_Full();//accessor
 	PhoneNumber get_phoneNumber(PhoneNumber, bool&);//accessor

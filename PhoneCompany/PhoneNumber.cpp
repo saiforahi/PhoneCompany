@@ -54,7 +54,7 @@ void PhoneNumber::enqueue_call(Call newCall)
 	calls.push(newCall);
 }
 
-Call PhoneNumber::get_call()
+Call PhoneNumber::dequeue_call()
 {
 	if (!calls.empty())
 	{

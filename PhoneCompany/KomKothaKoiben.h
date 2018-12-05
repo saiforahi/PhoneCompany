@@ -18,7 +18,7 @@ public:
 	void delete_number(string, PhoneNumber);//modifier
 	void change_operatorName_of_customer(string, PhoneNumber);//modifier
 	void reset_database();//modifier
-
+	void customer_enqueueCall(string,Call);
 	void print_database();//accessors
 	int get_length();//accessor
 	bool is_empty();//accessor

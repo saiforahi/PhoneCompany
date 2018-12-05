@@ -166,6 +166,22 @@ void KomKothaKoiben::reset_database()
 	currentPos = customerList.begin();
 }
 
+void KomKothaKoiben::customer_enqueueCall(string givenNID, Call newCall)
+{
+	if (!customerList.empty())
+	{
+		auto marker = customerList.begin();
+		for (; marker != customerList.end(); marker++)
+		{
+			if (marker->get_NID() == givenNID)
+			{
+				marker->enqueue_new_call(newCall);
+				break;
+			}
+		}
+	}
+}
+
 int KomKothaKoiben::get_length()
 {
 	return customerList.size();

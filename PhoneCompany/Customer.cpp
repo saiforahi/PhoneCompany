@@ -98,6 +98,22 @@ void Customer::change_operatorName(PhoneNumber numberToChangeOperator)
 	}
 }
 
+void Customer::enqueue_new_call(Call newCall)
+{
+	if (!is_Empty())
+	{
+		auto marker = numbers.begin();
+		for (; marker != numbers.end(); marker++)
+		{
+			if (marker->get_number() == newCall.get_reciever_number() && marker->get_operatorName() == newCall.get_reciever_operator())
+			{
+				marker->enqueue_call(newCall);
+				break;
+			}
+		}
+	}
+}
+
 bool Customer::is_Full()
 {
 	return numbers.size() >= MAX_SIZE;

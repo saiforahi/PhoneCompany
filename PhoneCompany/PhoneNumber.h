@@ -43,7 +43,7 @@ public:
 	string get_number();
 	string get_operatorName();
 	
-	Call get_call();
+	Call dequeue_call();
 	Call get_next_call();
 	void print_queued_calls();
 	void print_details();
