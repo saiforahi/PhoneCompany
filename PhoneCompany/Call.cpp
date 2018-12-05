@@ -5,10 +5,12 @@ Call::Call()
 {
 }
 
-Call::Call(string givenNumber, string givenOperatorName, Person newPerson, relationship relationshipNumber, int givenDuration)
+Call::Call(string givenNumber, string givenOperatorName,string givenNumberToCall,string operatorOfNumberToCall, Person newPerson, relationship relationshipNumber, int givenDuration)
 {
 	callFromNumber.number = givenNumber;
 	callFromNumber.operatorName = givenOperatorName;
+	callToNumber.number = givenNumberToCall;
+	callToNumber.operatorName = operatorOfNumberToCall;
 	caller = newPerson;
 	relationshipType = relationshipNumber;
 	durationInSeconds = givenDuration;
@@ -25,6 +27,16 @@ string Call::get_caller_number()
 string Call::get_caller_operator()
 {
 	return callFromNumber.operatorName;
+}
+
+string Call::get_reciever_number()
+{
+	return callToNumber.number;
+}
+
+string Call::get_reciever_operator()
+{
+	return callToNumber.operatorName;
 }
 
 relationship Call::get_relationship()

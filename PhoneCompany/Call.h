@@ -10,18 +10,25 @@ class Call
 		string operatorName;
 	};
 	
+	struct recieverNumber {
+		string number;
+		string operatorName;
+	};
 private:
 	callerNumber callFromNumber;
+	recieverNumber callToNumber;
 	Person caller;
 	relationship relationshipType;
 	int durationInSeconds = 0;
 	int hours, minutes, seconds;
 public:
 	Call();
-	Call(string,string, Person, relationship,int);//parameterized constructor
+	Call(string,string,string,string, Person, relationship,int);//parameterized constructor
 	
 	string get_caller_number();//accessor
 	string get_caller_operator();//accessor
+	string get_reciever_number();
+	string get_reciever_operator();
 	relationship get_relationship();//accessor
 	string get_duration();//accessor
 	int get_durationInSeconds();//accessor
