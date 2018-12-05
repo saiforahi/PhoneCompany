@@ -31,61 +31,22 @@ int main()
 	database.insert_customer(B);
 	database.insert_customer(C);
 	database.insert_customer(D);
-	A.add_number(number2);
-	A.add_number(number3);
-	A.add_number(number4);
-	B.add_number(number6);
-	B.add_number(number7);
-	B.add_number(number8);
-	C.add_number(number10);
-	C.add_number(number11);
-	C.add_number(number12);
-	D.add_number(number14);
-	D.add_number(number15);
-	D.add_number(number16);
 
+	database.add_new_number(A.get_NID(), number2);
+	database.add_new_number(A.get_NID(), number3);
+	database.add_new_number(A.get_NID(), number4);
+	database.add_new_number(B.get_NID(), number6);
+	database.add_new_number(B.get_NID(), number7);
+	database.add_new_number(B.get_NID(), number8);
+	database.add_new_number(C.get_NID(), number10);
+	database.add_new_number(C.get_NID(), number11);
+	database.add_new_number(C.get_NID(), number12);
+	database.add_new_number(D.get_NID(), number14);
+	database.add_new_number(D.get_NID(), number15);
+	database.add_new_number(D.get_NID(), number16);
 	
-
-	//operating database actions
 	
-	database.insert_customer(customerSaif);
-	database.insert_customer(customerNaima);
-
-	database.print_database();
-
-	bool result = false;
-	Customer customerToUpdate = database.get_customer(customerNaima.get_NID(), result);
-	if (result)
-	{
-		database.add_new_number(customerToUpdate.get_NID(), number1);
-	}
-	cout << "\n\nafter adding a number to existing customer......." << endl;
-	database.print_database();
-	cout << "\nInserting another new customer in database....." << endl;
-	database.insert_customer(customerAzad);
-	cout << "\n\nafter adding a customer to database......." << endl;
-	database.print_database();
-	cout << "\n\nadding five more new customers into database......." << endl;
-	database.insert_customer(customerRikta);
-	
-	cout << "\n\nafter adding ......." << endl;
-	database.print_database();
-	cout << "\n\nDeleting phone numbers of Customer NAIMA ......." << endl;
-	bool search = false;
-	Customer customerToDeleteNumber = database.get_customer(customerNaima.get_NID(), search);
-	if (search)
-	{
-		customerToDeleteNumber.reset_number_list();
-		for (int index = 0; index < customerToDeleteNumber.get_length(); index++)
-		{
-			database.delete_number(customerToDeleteNumber.get_NID(), customerToDeleteNumber.getNextNumber());
-		}
-	}
-
-	//cout << "\n\nafter deleting all numbers of customer NAIMA ......" << endl;
-
-	//database.print_database();
-	Person p1("saif", "rahi");
+	Person p1("saif", "rahi","19921083512");
 	Person p2("Naim", "Esha");
 	Person p3("Rehab", "Jenny");
 	Person p4("Nurzahan", "Azad");
