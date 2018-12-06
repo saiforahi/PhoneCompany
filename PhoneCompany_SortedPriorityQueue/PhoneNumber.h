@@ -27,6 +27,8 @@ public:
 	bool is_call_list_empty();
 	string get_number();
 	string get_operatorName();
+	Call get_next_call();
+	void make_empty();
 	void print_details();
 };
 

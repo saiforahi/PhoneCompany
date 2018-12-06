@@ -128,6 +128,30 @@ string PhoneNumber::get_operatorName()
 	return operatorName;
 }
 
+Call PhoneNumber::get_next_call()
+{
+	if (!is_call_list_empty())
+	{
+		return listData->item;
+	}
+	return Call();
+}
+
+void PhoneNumber::make_empty()
+{
+	NodeType* locationToDelete = nullptr;
+	while (listData != nullptr) {
+		locationToDelete = listData;
+		listData = listData->next;
+		if (currentPos == locationToDelete) {
+			currentPos = currentPos->next;
+		}
+		delete locationToDelete;
+		length--;
+	}
+}
+
+
 void PhoneNumber::print_details()
 {
 	cout << "\t\t" << operatorName << "\t\t" << number << endl;
