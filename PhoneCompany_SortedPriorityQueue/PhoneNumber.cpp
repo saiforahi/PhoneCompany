@@ -59,6 +59,25 @@ void PhoneNumber::enqueue_call(Call newCall)
 			prev = curr;
 			curr = curr->next;
 		}
+		else if (curr->item.get_relationship() == newCall.get_relationship())
+		{
+			if (curr->item.get_durationInSeconds() >= newCall.get_durationInSeconds())
+			{
+				prev = curr;
+				curr = curr->next;
+			}
+			else if (curr->item.get_durationInSeconds() < newCall.get_durationInSeconds())
+			{
+				posFound = true;
+				newNode->next = curr;
+				if (prev == nullptr) {
+					listData = newNode;
+				}
+				else {
+					prev->next = newNode;
+				}
+			}
+		}
 		else {
 			posFound = true;
 			newNode->next = curr;
