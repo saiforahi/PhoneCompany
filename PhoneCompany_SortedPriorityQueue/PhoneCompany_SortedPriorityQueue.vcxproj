@@ -153,9 +153,11 @@
   <ItemGroup>
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneCompany_SortedPriorityQueue.cpp" />
+    <ClCompile Include="PhoneNumber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h" />
+    <ClInclude Include="PhoneNumber.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
