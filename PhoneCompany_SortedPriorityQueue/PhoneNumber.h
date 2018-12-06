@@ -29,6 +29,7 @@ public:
 	string get_operatorName();
 	Call get_next_call();
 	void make_empty();
+	void print_queued_calls();
 	void print_details();
 };
 

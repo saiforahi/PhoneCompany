@@ -152,8 +152,25 @@ void PhoneNumber::make_empty()
 	}
 }
 
+void PhoneNumber::print_queued_calls()
+{
+	if (!is_call_list_empty())
+	{
+		NodeType* demo = listData;
+		while (demo != nullptr)
+		{
+			demo->item.print_call();
+			demo = demo->next;
+		}
+	}
+	else
+		cout << "  \t\t\t\t\tno calls  " << endl;
+}
+
 
 void PhoneNumber::print_details()
 {
-	cout << "\t\t" << operatorName << "\t\t" << number << endl;
+	cout << "\n\t" << operatorName << "\t" << number << endl;
+	cout << "\t\tCalls:" << endl;
+	print_queued_calls();
 }
