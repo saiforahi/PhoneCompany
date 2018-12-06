@@ -44,6 +44,40 @@ void PhoneNumber::set_operatorName(string givenName)
 		cout << "Invalid operator name" << endl;
 }
 
+void PhoneNumber::enqueue_call(Call newItem)
+{
+	if (queuedCallsSize >= queuedCallsMaxSize)
+		cout << "List is full" << endl;
+	else {
+		queuedCallsSize++;
+		queuedCalls[queuedCallsSize - 1] = newItem;
+		ReheapUp(0, queuedCallsSize - 1);
+	}
+}
+
+void PhoneNumber::ReheapUp(int root, int bottom)
+{
+	if (root != bottom)
+	{
+		int parent;
+		if (queuedCalls[bottom].get_relationship() > queuedCalls[root].get_relationship()) {
+			parent = (bottom - 1) / 2;
+			if (queuedCalls[parent].get_relationship() > queuedCalls[bottom].get_relationship()) {
+				swap(queuedCalls[parent], queuedCalls[bottom]);
+				ReheapUp(root, parent);
+			}
+		}
+		else if (queuedCalls[bottom].get_relationship() == queuedCalls[root].get_relationship())
+		{
+			if (queuedCalls[bottom].get_durationInSeconds() > queuedCalls[root].get_durationInSeconds()) {
+				parent = (bottom - 1) / 2;
+				swap(queuedCalls[parent], queuedCalls[bottom]);
+				ReheapUp(root, parent);
+			}
+		}
+	}
+}
+
 bool PhoneNumber::is_call_list_empty()
 {
 	return queuedCallsSize==0 ;

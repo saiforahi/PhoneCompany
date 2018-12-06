@@ -17,8 +17,9 @@ public:
 	~PhoneNumber();
 
 	void set_operatorName(string); //modifier
-	
+	void enqueue_call(Call);
 	//list of accessors
+	void ReheapUp(int,int);
 	bool is_call_list_empty();
 	bool is_call_list_full();
 	void swap(Call&,Call&);
