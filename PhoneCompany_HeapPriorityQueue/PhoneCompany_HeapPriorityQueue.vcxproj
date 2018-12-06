@@ -156,12 +156,14 @@
     <ClCompile Include="KomKothaKoiben.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneCompany_HeapPriorityQueue.cpp" />
+    <ClCompile Include="PhoneNumber.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Call.h" />
     <ClInclude Include="Customer.h" />
     <ClInclude Include="KomKothaKoiben.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="PhoneNumber.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
