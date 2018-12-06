@@ -76,9 +76,9 @@ int main()
 	Person P28("Shaikot", "Hasan", "33333333333");
 	Person P29("Moinul", "Mahmud", "19921083512");
 	Person P30("Shawrid", "Shams", "19921083512");
-	Call call1("01671919344", "Robi",P1, Subordinate, 4250);
-	Call call2(number2.get_number(), number2.get_operatorName(), p2, Parent, 5250);
-	Call call3(number3.get_number(), number3.get_operatorName(), p3, Sibling, 3250);
+	Call call1("01671919344", "Robi",number1.get_number(),number1.get_operatorName(),P1, Subordinate, 4250);
+	Call call2("01XXXXXXXXX","GP",number2.get_number(), number2.get_operatorName(), P2, Parent, 5250);
+	Call call2("01XXXXXXXXX", "GP", number2.get_number(), number2.get_operatorName(), P2, Parent, 5250);
 	number1.enqueue_call(call1);
 	number1.enqueue_call(call2);
 	number1.enqueue_call(call3);

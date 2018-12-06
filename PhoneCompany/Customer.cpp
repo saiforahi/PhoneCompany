@@ -114,6 +114,23 @@ void Customer::enqueue_new_call(Call newCall)
 	}
 }
 
+void Customer::dequeue_call(PhoneNumber numberToDequeueCall)
+{
+	if (!numbers.empty())
+	{
+		auto marker = numbers.begin();
+		for (; marker != numbers.end(); marker++)
+		{
+			if (marker->get_number() == numberToDequeueCall.get_number() && marker->get_operatorName() == numberToDequeueCall.get_operatorName())
+			{
+				marker->dequeue_call();
+				break;
+			}
+		}
+	}
+}
+
+
 bool Customer::is_Full()
 {
 	return numbers.size() >= MAX_SIZE;
