@@ -86,30 +86,30 @@ void Call::print_call()
 	switch (relationshipType)
 	{
 	case Spouse:
-		cout <<"Spouse\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout <<"\t\t\tSpouse\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Child:
-		cout << "Child\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tChild\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Parent:
-		cout << "Parent\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tParent\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Sibling:
-		cout << "Sibling\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tSibling\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Relatives:
-		cout << "Relatives\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tRelatives\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Cousins:
-		cout << "Cousins\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tCousins\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Significant:
-		cout << "Significant\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tSignificant\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Friend:
-		cout << "Friend\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tFriend\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Boss:
-		cout << "Boss\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tBoss\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Subordinate:
-		cout << "Subordinate\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tSubordinate\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Acquaintance:
-		cout << "Acquaintance\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+		cout << "\t\t\tAcquaintance\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
 		break;
 	case Blocked:
-		cout << "Blocked\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+		cout << "\t\t\tBlocked\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
 		break;
 	}
 	

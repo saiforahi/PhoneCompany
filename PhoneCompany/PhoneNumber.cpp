@@ -72,20 +72,27 @@ Call PhoneNumber::get_next_call()
 
 void PhoneNumber::print_queued_calls()
 {
-	queuedCalls demo = calls;
-	Call dummy;
-	while (!demo.empty())
+	if (calls.empty())
 	{
-		dummy=demo.top();
-		dummy.print_call();
-		demo.pop();
+		cout << "  \t\t\t\t\tno calls  " << endl;
+	}
+	else
+	{
+		queuedCalls demo = calls;
+		Call dummy;
+		while (!demo.empty())
+		{
+			dummy = demo.top();
+			dummy.print_call();
+			demo.pop();
+		}
 	}
 }
 
 void PhoneNumber::print_details()
 {
-	cout << "\t" << operatorName << "\t\t" << number << endl;
-	cout << "\t\tCalls" << endl;
+	cout << "\n\t" << operatorName << "\t" << number << endl;
+	cout << "\t\tCalls:" << endl;
 	print_queued_calls();
 }
 
