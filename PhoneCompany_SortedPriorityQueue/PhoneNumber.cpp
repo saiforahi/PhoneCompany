@@ -84,7 +84,7 @@ void PhoneNumber::enqueue_call(Call newCall)
 	length++;
 }
 
-void PhoneNumber::dequeue_call(Call &callToDequeue)
+Call PhoneNumber::dequeue_call()
 {
 	if (is_call_list_empty()) {
 		cout << "Empty queue" << endl;
@@ -92,9 +92,10 @@ void PhoneNumber::dequeue_call(Call &callToDequeue)
 	else {
 		NodeType* dequeuedNode = listData;
 		listData = listData->next;
-		callToDequeue = dequeuedNode->item;
+		Call callToDequeue = dequeuedNode->item;
 		delete dequeuedNode;
 		this->length--;
+		return callToDequeue;
 	}
 }
 
