@@ -3,14 +3,14 @@
 #include "Call.h"
 #include <vector>
 using namespace std;
-const int MAX_SIZE = 100;
+const int MAXIMUM_SIZE = 100;
 class PhoneNumber
 {
 private:
 	string number, operatorName;
 	Call* queuedCalls=nullptr;
 	int queuedCallsSize = 0;
-	int queuedCallsMaxSize = MAX_SIZE;
+	int queuedCallsMaxSize = MAXIMUM_SIZE;
 public:
 	PhoneNumber();
 	PhoneNumber(string, string); //parameterized constructor
@@ -27,6 +27,7 @@ public:
 	void swap(Call&,Call&);
 	string get_number();
 	string get_operatorName();
+	void print_queued_calls(int);
 	void print_details();
 };
 

@@ -148,7 +148,23 @@ string PhoneNumber::get_operatorName()
 	return operatorName;
 }
 
+void PhoneNumber::print_queued_calls(int root)
+{
+	if (queuedCallsSize==0)
+	{
+		cout << "  \t\t\t\t\tno calls  " << endl;
+	}
+	else
+	{
+		queuedCalls[root].print_call();
+		ReheapDown(root+1, queuedCallsSize - 1);
+		print_queued_calls(root+1);
+	}
+}
+
 void PhoneNumber::print_details()
 {
 	cout << "\t\t" << operatorName << "\t\t" << number << endl;
+	cout << "\t\tCalls:" << endl;
+	print_queued_calls(0);
 }
