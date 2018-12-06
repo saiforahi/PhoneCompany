@@ -21,8 +21,10 @@ public:
 
 	void set_operatorName(string); //modifier
 	void enqueue_call(Call);
+	
 	//list of accessors
 	bool is_call_list_full();
+	bool is_call_list_empty();
 	string get_number();
 	string get_operatorName();
 	void print_details();

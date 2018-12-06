@@ -86,6 +86,7 @@ void PhoneNumber::enqueue_call(Call newCall)
 
 
 
+
 bool PhoneNumber::is_call_list_full()
 {
 	try {
@@ -96,6 +97,11 @@ bool PhoneNumber::is_call_list_full()
 		return true;
 	}
 	return false;
+}
+
+bool PhoneNumber::is_call_list_empty()
+{
+	return length==0 && listData==nullptr;
 }
 
 string PhoneNumber::get_number()
