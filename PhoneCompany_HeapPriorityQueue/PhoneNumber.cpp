@@ -55,6 +55,17 @@ void PhoneNumber::enqueue_call(Call newItem)
 	}
 }
 
+void PhoneNumber::dequeue_call()
+{
+	if (is_call_list_empty())
+		cout<<"no call to dequeue"<<endl;
+	else {
+		queuedCalls[0] = queuedCalls[queuedCallsSize - 1];
+		queuedCallsSize--;
+		ReheapDown(0, queuedCallsSize - 1);
+	}
+}
+
 void PhoneNumber::ReheapUp(int root, int bottom)
 {
 	if (root != bottom)
@@ -74,6 +85,32 @@ void PhoneNumber::ReheapUp(int root, int bottom)
 				swap(queuedCalls[parent], queuedCalls[bottom]);
 				ReheapUp(root, parent);
 			}
+		}
+	}
+}
+
+void PhoneNumber::ReheapDown(int root, int bottom)
+{
+	int maxChild;
+	int rightChild;
+	int leftChild;
+	leftChild = root * 2 + 1;
+	rightChild = root * 2 + 2;
+	if (queuedCalls[leftChild].get_relationship() >= queuedCalls[bottom].get_relationship()) {
+		if (queuedCalls[leftChild].get_relationship() == queuedCalls[bottom].get_relationship())
+		{
+			if(queuedCalls[leftChild].get_durationInSeconds()> queuedCalls[bottom].get_durationInSeconds())
+			maxChild = leftChild;
+		}
+		else {
+			if (elements[leftChild] <= elements[rightChild])
+				maxChild = rightChild;
+			else
+				maxChild = leftChild;
+		}
+		if (elements[root] < elements[maxChild]) {
+			Swap(elements[root], elements[maxChild]);
+			ReheapDown(maxChild, bottom);
 		}
 	}
 }

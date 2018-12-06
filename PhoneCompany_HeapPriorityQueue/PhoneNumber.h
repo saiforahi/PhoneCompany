@@ -18,8 +18,10 @@ public:
 
 	void set_operatorName(string); //modifier
 	void enqueue_call(Call);
+	void dequeue_call();
 	//list of accessors
 	void ReheapUp(int,int);
+	void ReheapDown(int,int);
 	bool is_call_list_empty();
 	bool is_call_list_full();
 	void swap(Call&,Call&);
