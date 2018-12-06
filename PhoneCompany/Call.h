@@ -21,9 +21,10 @@ private:
 	relationship relationshipType;
 	int durationInSeconds = 0;
 	int hours, minutes, seconds;
+	string recieverNID;
 public:
 	Call();
-	Call(string,string,string,string, Person, relationship,int);//parameterized constructor
+	Call(string,string,string,string,string, Person, relationship,int);//parameterized constructor
 	
 	string get_caller_number();//accessor
 	string get_caller_operator();//accessor
@@ -31,6 +32,7 @@ public:
 	string get_reciever_operator();
 	relationship get_relationship();//accessor
 	string get_duration();//accessor
+	string get_recieverNID();
 	int get_durationInSeconds();//accessor
 	Person get_caller();//modifier
 	void set_duration(int);//modifier
