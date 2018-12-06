@@ -25,6 +25,7 @@ PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
 
 PhoneNumber::~PhoneNumber()
 {
+	delete[]queuedCalls;
 }
 
 void PhoneNumber::set_operatorName(string givenName)
@@ -45,12 +46,21 @@ void PhoneNumber::set_operatorName(string givenName)
 
 bool PhoneNumber::is_call_list_empty()
 {
-	return queuedCallsSize==0 && queuedCalls==nullptr;
+	return queuedCallsSize==0 ;
 }
 
 bool PhoneNumber::is_call_list_full()
 {
 	return queuedCallsSize== queuedCallsMaxSize;
+}
+
+
+void PhoneNumber::swap(Call & one, Call & two)
+{
+	Call temp;
+	temp = one;
+	one = two;
+	two = temp;
 }
 
 string PhoneNumber::get_number()
