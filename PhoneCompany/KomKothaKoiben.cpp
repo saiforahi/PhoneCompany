@@ -182,6 +182,22 @@ void KomKothaKoiben::customer_enqueueCall(string givenNID, Call newCall)
 	}
 }
 
+void KomKothaKoiben::customer_dequeueCall(string givenNID, PhoneNumber givenPhoneNumber)
+{
+	if (!customerList.empty())
+	{
+		auto marker = customerList.begin();
+		for (; marker != customerList.end(); marker++)
+		{
+			if (marker->get_NID() == givenNID)
+			{
+				marker->dequeue_call(givenPhoneNumber);
+				break;
+			}
+		}
+	}
+}
+
 int KomKothaKoiben::get_length()
 {
 	return customerList.size();
