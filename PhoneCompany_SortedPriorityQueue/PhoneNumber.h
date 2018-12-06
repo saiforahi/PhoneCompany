@@ -22,7 +22,7 @@ public:
 	void set_operatorName(string); //modifier
 	
 	//list of accessors
-
+	bool is_call_list_full();
 	string get_number();
 	string get_operatorName();
 	void print_details();

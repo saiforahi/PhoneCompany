@@ -39,6 +39,20 @@ void PhoneNumber::set_operatorName(string givenName)
 		cout << "Invalid operator name" << endl;
 }
 
+
+
+bool PhoneNumber::is_call_list_full()
+{
+	try {
+		NodeType* newNode = new NodeType;
+		delete newNode;
+	}
+	catch (std::bad_alloc exception) {
+		return true;
+	}
+	return false;
+}
+
 string PhoneNumber::get_number()
 {
 	return number;
