@@ -68,25 +68,23 @@ void PhoneNumber::dequeue_call()
 
 void PhoneNumber::ReheapUp(int root, int bottom)
 {
-	if (root != bottom)
+	
+	int parent=(bottom-1)/2;
+	if (parent < root)
+		return;
+	else if (queuedCalls[parent].get_relationship() > queuedCalls[bottom].get_relationship())
 	{
-		int parent;
-		if (queuedCalls[bottom].get_relationship() > queuedCalls[root].get_relationship()) {
-			parent = (bottom - 1) / 2;
-			if (queuedCalls[parent].get_relationship() > queuedCalls[bottom].get_relationship()) {
-				swap(queuedCalls[parent], queuedCalls[bottom]);
-				ReheapUp(root, parent);
-			}
-		}
-		else if (queuedCalls[bottom].get_relationship() == queuedCalls[root].get_relationship())
-		{
-			if (queuedCalls[bottom].get_durationInSeconds() > queuedCalls[root].get_durationInSeconds()) {
-				parent = (bottom - 1) / 2;
-				swap(queuedCalls[parent], queuedCalls[bottom]);
-				ReheapUp(root, parent);
-			}
+		swap(queuedCalls[parent], queuedCalls[bottom]);
+		ReheapUp(root, parent);
+	}
+	else if (queuedCalls[bottom].get_relationship() == queuedCalls[parent].get_relationship())
+	{
+		if (queuedCalls[bottom].get_durationInSeconds() > queuedCalls[root].get_durationInSeconds()) {
+			swap(queuedCalls[parent], queuedCalls[bottom]);
+			ReheapUp(root, parent);
 		}
 	}
+	
 }
 
 void PhoneNumber::ReheapDown(int root, int bottom)
@@ -96,21 +94,27 @@ void PhoneNumber::ReheapDown(int root, int bottom)
 	int leftChild;
 	leftChild = root * 2 + 1;
 	rightChild = root * 2 + 2;
-	if (queuedCalls[leftChild].get_relationship() >= queuedCalls[bottom].get_relationship()) {
-		if (queuedCalls[leftChild].get_relationship() == queuedCalls[bottom].get_relationship())
-		{
-			if(queuedCalls[leftChild].get_durationInSeconds()> queuedCalls[bottom].get_durationInSeconds())
+	if (leftChild <= bottom)
+	{
+		if (leftChild == bottom)
 			maxChild = leftChild;
-		}
-		else {
-			if (elements[leftChild] <= elements[rightChild])
+		else
+		{
+			if (queuedCalls[leftChild].get_relationship() >= queuedCalls[rightChild].get_relationship())
 				maxChild = rightChild;
 			else
 				maxChild = leftChild;
 		}
-		if (elements[root] < elements[maxChild]) {
-			Swap(elements[root], elements[maxChild]);
+		if (queuedCalls[root].get_relationship() > queuedCalls[maxChild].get_relationship()) {
+			swap(queuedCalls[root], queuedCalls[maxChild]);
 			ReheapDown(maxChild, bottom);
+		}
+		if (queuedCalls[root].get_relationship() == queuedCalls[maxChild].get_relationship()) {
+			if (queuedCalls[root].get_durationInSeconds() < queuedCalls[maxChild].get_durationInSeconds())
+			{
+				swap(queuedCalls[root], queuedCalls[maxChild]);
+				ReheapDown(maxChild, bottom);
+			}
 		}
 	}
 }
