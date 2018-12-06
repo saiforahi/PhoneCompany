@@ -83,7 +83,36 @@ void Call::update_duration(int newValue)
 
 void Call::print_call()
 {
-	cout <<"\t"<< relationship(relationshipType)<<"\t"<<get_duration() << endl;
+	switch (relationshipType)
+	{
+	case 1:
+		cout <<"Spouse\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 2:
+		cout << "Child\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 3:
+		cout << "Parent\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 4:
+		cout << "Sibling\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 5:
+		cout << "Relatives\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 6:
+		cout << "Cousins\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 7:
+		cout << "Significant\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 8:
+		cout << "Friend\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 9:
+		cout << "Boss\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 10:
+		cout << "Subordinate\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 11:
+		cout << "Acquaintance\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	case 12:
+		cout << "Blocked\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
+	default:
+		break;
+	}
+	
 }
 
 Call::~Call()
