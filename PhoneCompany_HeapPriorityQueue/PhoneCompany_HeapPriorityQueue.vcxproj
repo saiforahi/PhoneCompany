@@ -153,12 +153,14 @@
   <ItemGroup>
     <ClCompile Include="Call.cpp" />
     <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="KomKothaKoiben.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PhoneCompany_HeapPriorityQueue.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Call.h" />
     <ClInclude Include="Customer.h" />
+    <ClInclude Include="KomKothaKoiben.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
