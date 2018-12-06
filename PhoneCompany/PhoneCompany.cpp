@@ -105,7 +105,27 @@ int main()
 	Call call19("01XXXXXXXXX", "GP", "01786490167", "GP", "19728014444", P14, Acquaintance, 16750);
 	Call call20("01XXXXXXXXX", "GP", "01786490167", "GP", "19728014444", P7, Sibling, 19730);
 	
-	
+	database.customer_enqueueCall("19728014444",call1);
+	database.customer_enqueueCall("19728014444", call2);
+	database.customer_enqueueCall("19728014444", call3);
+	database.customer_enqueueCall("19728014444", call4);
+	database.customer_enqueueCall("19728014444", call5);
+	/*database.customer_enqueueCall("19728014444", call6);
+	database.customer_enqueueCall("19728014444", call7);
+	database.customer_enqueueCall("19728014444", call8);
+	database.customer_enqueueCall("19728014444", call9);
+	database.customer_enqueueCall("19728014444", call10);
+	database.customer_enqueueCall("19728014444", call11);
+	database.customer_enqueueCall("19728014444", call12);
+	database.customer_enqueueCall("19728014444", call13);
+	database.customer_enqueueCall("19728014444", call14);
+	database.customer_enqueueCall("19728014444", call15);
+	database.customer_enqueueCall("19728014444", call16);
+	database.customer_enqueueCall("19728014444", call17);
+	database.customer_enqueueCall("19728014444", call18);
+	database.customer_enqueueCall("19728014444", call19);
+	database.customer_enqueueCall("19728014444", call20);*/
+	database.print_database();
 	return 0;
 }
 

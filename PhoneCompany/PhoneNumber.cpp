@@ -72,7 +72,6 @@ Call PhoneNumber::get_next_call()
 
 void PhoneNumber::print_queued_calls()
 {
-	cout << "\t\t" << operatorName << "\t\t" << number << endl;
 	queuedCalls demo = calls;
 	Call dummy;
 	while (!demo.empty())
@@ -85,7 +84,9 @@ void PhoneNumber::print_queued_calls()
 
 void PhoneNumber::print_details()
 {
-	cout << "\t\t" << operatorName << "\t\t" << number << endl;
+	cout << "\t" << operatorName << "\t\t" << number << endl;
+	cout << "\t\tCalls" << endl;
+	print_queued_calls();
 }
 
 
