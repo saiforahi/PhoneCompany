@@ -5,6 +5,8 @@ using namespace std;
 
 PhoneNumber::PhoneNumber()
 {
+	queuedCalls = new Call[queuedCallsMaxSize];
+	queuedCallsSize = 0;
 }
 
 PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
@@ -16,6 +18,8 @@ PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
 	else {
 		number = givenNumber;
 		operatorName = givenOperator;
+		queuedCalls = new Call[queuedCallsMaxSize];
+		queuedCallsSize = 0;
 	}
 }
 
@@ -37,6 +41,16 @@ void PhoneNumber::set_operatorName(string givenName)
 		operatorName = givenName;
 	else
 		cout << "Invalid operator name" << endl;
+}
+
+bool PhoneNumber::is_call_list_empty()
+{
+	return queuedCallsSize==0 && queuedCalls==nullptr;
+}
+
+bool PhoneNumber::is_call_list_full()
+{
+	return queuedCallsSize== queuedCallsMaxSize;
 }
 
 string PhoneNumber::get_number()
