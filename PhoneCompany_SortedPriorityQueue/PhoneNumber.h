@@ -20,7 +20,7 @@ public:
 	~PhoneNumber();
 
 	void set_operatorName(string); //modifier
-	
+	void enqueue_call(Call);
 	//list of accessors
 	bool is_call_list_full();
 	string get_number();

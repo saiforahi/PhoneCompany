@@ -5,6 +5,9 @@ using namespace std;
 
 PhoneNumber::PhoneNumber()
 {
+	listData = nullptr;
+	length = 0;
+	currentPos = nullptr;
 }
 
 PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
@@ -17,6 +20,9 @@ PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
 		number = givenNumber;
 		operatorName = givenOperator;
 	}
+	listData = nullptr;
+	length = 0;
+	currentPos = nullptr;
 }
 
 PhoneNumber::~PhoneNumber()
@@ -37,6 +43,45 @@ void PhoneNumber::set_operatorName(string givenName)
 		operatorName = givenName;
 	else
 		cout << "Invalid operator name" << endl;
+}
+
+void PhoneNumber::enqueue_call(Call newCall)
+{
+	if (is_call_list_full())
+		return;
+	NodeType* newNode = new NodeType;
+	newNode->item = newCall;
+	NodeType* curr = listData;
+	NodeType* prev = nullptr;
+	bool posFound = false;
+	while (curr != nullptr && !posFound) {
+		if (curr->item.get_relationship() < newCall.get_relationship()) {
+			prev = curr;
+			curr = curr->next;
+		}
+		else {
+			posFound = true;
+			newNode->next = curr;
+			if (prev == nullptr) {
+				listData = newNode;
+			}
+			else {
+				prev->next = newNode;
+			}
+		}
+	}
+	if (!posFound)
+	{
+		posFound = true;
+		newNode->next = curr;
+		if (prev == nullptr) {
+			listData = newNode;
+		}
+		else {
+			prev->next = newNode;
+		}
+	}
+	length++;
 }
 
 
