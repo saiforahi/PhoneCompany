@@ -28,7 +28,9 @@ void HeapType::ReheapDown(int root, int bottom)
 			maxChild = leftChild;
 		else
 		{
-			if (calls[leftChild].get_relationship() >= calls[rightChild].get_relationship())
+			if (calls[leftChild].get_relationship() > calls[rightChild].get_relationship())
+				maxChild = rightChild;
+			else if (calls[leftChild].get_relationship() == calls[rightChild].get_relationship() && calls[leftChild].get_durationInSeconds() < calls[rightChild].get_durationInSeconds())
 				maxChild = rightChild;
 			else
 				maxChild = leftChild;
@@ -38,7 +40,7 @@ void HeapType::ReheapDown(int root, int bottom)
 			ReheapDown(maxChild, bottom);
 		}
 		else if (calls[root].get_relationship() == calls[maxChild].get_relationship()) {
-			if (calls[root].get_durationInSeconds() < calls[maxChild].get_durationInSeconds())
+			if (calls[root].get_durationInSeconds() > calls[maxChild].get_durationInSeconds())
 			{
 				swap(calls[root], calls[maxChild]);
 				ReheapDown(maxChild, bottom);
@@ -59,7 +61,7 @@ void HeapType::ReheapUp(int root, int bottom)
 	}
 	else if (calls[bottom].get_relationship() == calls[parent].get_relationship())
 	{
-		if (calls[bottom].get_durationInSeconds() > calls[root].get_durationInSeconds()) {
+		if (calls[bottom].get_durationInSeconds() > calls[parent].get_durationInSeconds()) {
 			swap(calls[parent], calls[bottom]);
 			ReheapUp(root, parent);
 		}
