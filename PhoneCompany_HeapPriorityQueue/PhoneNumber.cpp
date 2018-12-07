@@ -51,6 +51,11 @@ void PhoneNumber::dequeue_call(Call &dequeuedCall)
 	queuedCalls.dequeue(dequeuedCall);
 }
 
+void PhoneNumber::make_call_list_empty()
+{
+	queuedCalls.make_empty();
+}
+
 
 
 bool PhoneNumber::is_call_list_empty()
@@ -67,6 +72,11 @@ bool PhoneNumber::is_call_list_full()
 string PhoneNumber::get_number()
 {
 	return number;
+}
+
+bool PhoneNumber::hasNextCall()
+{
+	return queuedCalls.hasNextCall();
 }
 
 string PhoneNumber::get_operatorName()

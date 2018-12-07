@@ -86,7 +86,9 @@ void HeapType::swap(Call & one, Call & two)
 void HeapType::enqueue(Call newCall)
 {
 	if (is_full())
-		cout << "List is full" << endl;
+	{
+		cout << "List is full,increasing size" << endl;
+	}
 	else {
 		queuedCallsSize++;
 		calls[queuedCallsSize - 1] = newCall;
@@ -113,10 +115,22 @@ bool HeapType::is_empty()
 
 bool HeapType::is_full()
 {
-	return queuedCallsSize==queuedCallsMaxSize;
+	return queuedCallsSize>=queuedCallsMaxSize;
 }
 
 int HeapType::get_size()
 {
 	return queuedCallsSize;
 }
+
+void HeapType::make_empty()
+{
+	queuedCallsSize = 0;
+}
+
+bool HeapType::hasNextCall()
+{
+	return queuedCallsSize>=1;
+}
+
+
