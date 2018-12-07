@@ -43,7 +43,7 @@ public:
 	string get_number();
 	string get_operatorName();
 	bool is_list_empty();
-	bool is_list_full();
+	bool hasNextCall();
 	int get_call_list_size();
 	void dequeue_call(Call&);
 	Call get_next_call();

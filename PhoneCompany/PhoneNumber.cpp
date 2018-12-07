@@ -54,6 +54,11 @@ bool PhoneNumber::is_list_empty()
 	return calls.empty();
 }
 
+bool PhoneNumber::hasNextCall()
+{
+	return calls.size()>=1;
+}
+
 int PhoneNumber::get_call_list_size()
 {
 	return calls.size();
