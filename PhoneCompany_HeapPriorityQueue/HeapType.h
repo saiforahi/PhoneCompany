@@ -1,6 +1,6 @@
 #pragma once
 #include "Call.h"
-const int MAXIMUM_SIZE = 1000;
+const int MAXIMUM_SIZE = 100;
 class HeapType
 {
 	Call* calls = nullptr;
@@ -19,4 +19,5 @@ public:
 	int get_size();
 	void make_empty();
 	bool hasNextCall();
+	Call* increased_array(Call*,int);
 };

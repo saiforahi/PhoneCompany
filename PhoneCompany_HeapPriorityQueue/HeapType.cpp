@@ -87,8 +87,11 @@ void HeapType::enqueue(Call newCall)
 {
 	if (is_full())
 	{
-		cout << "List is full" << endl;
-
+		queuedCallsMaxSize = queuedCallsMaxSize * 2;
+		calls = increased_array(calls,queuedCallsMaxSize);
+		queuedCallsSize++;
+		calls[queuedCallsSize - 1] = newCall;
+		ReheapUp(0, queuedCallsSize - 1);
 	}
 	else {
 		queuedCallsSize++;
@@ -133,3 +136,15 @@ bool HeapType::hasNextCall()
 {
 	return queuedCallsSize >= 1;
 }
+
+Call * HeapType::increased_array(Call * oldArray, int newSize)
+{
+	Call* newArray = new Call[newSize];
+	for (int index = 0; index < queuedCallsSize; index++) {
+		newArray[index] = oldArray[index];
+	}
+	delete[] oldArray;
+	return newArray;
+}
+
+
