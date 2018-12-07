@@ -23,14 +23,16 @@ public:
 	void enqueue_call(Call);
 	void dequeue_call(Call&);
 	//list of accessors
-	bool is_call_list_full();
-	bool is_call_list_empty();
-	string get_number();
-	string get_operatorName();
-	Call get_next_call();
-	void make_empty();
-	void print_queued_calls();
-	void print_details();
+	bool is_call_list_full();//accessor
+	bool is_call_list_empty();//accessor
+	int get_call_list_size();//accessor
+	string get_number();//accessor
+	string get_operatorName();//accessor
+	Call get_next_call();//accessor
+	bool hasNextCall();//accessor
+	void make_empty();//modifier
+	void print_queued_calls();//accessor
+	void print_details();//accessor
 };
 
 

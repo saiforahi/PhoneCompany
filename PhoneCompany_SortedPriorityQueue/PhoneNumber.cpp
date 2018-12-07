@@ -118,7 +118,10 @@ void PhoneNumber::dequeue_call(Call & dequeuedCall)
 }
 
 
-
+bool PhoneNumber::hasNextCall()
+{
+	return listData != nullptr;
+}
 
 bool PhoneNumber::is_call_list_full()
 {
@@ -135,6 +138,11 @@ bool PhoneNumber::is_call_list_full()
 bool PhoneNumber::is_call_list_empty()
 {
 	return length==0 && listData==nullptr;
+}
+
+int PhoneNumber::get_call_list_size()
+{
+	return length;
 }
 
 string PhoneNumber::get_number()
