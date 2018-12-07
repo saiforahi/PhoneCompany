@@ -7,7 +7,7 @@ int main()
 {
 	//declaring 30 persons 
 
-	Person P1("Irfan", "Khan", "XXXXXXXXXXX");
+	/*Person P1("Irfan", "Khan", "XXXXXXXXXXX");
 	Person P2("Fahim", "Uddin", "YYYYYYYYYYY");
 	Person P3("Tayeba", "Ayub", "AAAAAAAAAAA");
 	Person P4("Mehedy", "Hasan", "MMMMMMMMMMM");
@@ -125,7 +125,61 @@ int main()
 	database.customer_enqueueCall("19728014444", call18);
 	database.customer_enqueueCall("19728014444", call19);
 	database.customer_enqueueCall("19728014444", call20);
-	database.print_database();
+	database.print_database();*/
+
+
+	Person P1("Irfan", "Khan", "XXXXXXXXXXX");
+	Person P2("Fahim", "Uddin", "YYYYYYYYYYY");
+	Person P3("Tayeba", "Ayub", "AAAAAAAAAAA");
+	Person P4("Mehedy", "Hasan", "MMMMMMMMMMM");
+	Person P5("Happy", "sadia", "PPPPPPPPPPP");
+	Person P6("Nurnahar", "Jhorna", "QQQQQQQQQQQ");
+	Person P7("Amena", "Begum", "TTTTTTTTTTT");
+	Person P8("Karnain", "Shibli", "GGGGGGGGGGG");
+	Person P9("Julfikar", "Azad", "SSSSSSSSSSS");
+	Person P10("Monoara", "Begum", "JJJJJJJJJJJ");
+	Person P11("Sadrul", "Anam", "LLLLLLLLLLL");
+	Person P12("Shihab", "Anam", "UUUUUUUUUUU");
+	Person P13("Hira", "mama", "WWWWWWWWWWW");
+	Person P14("Panna", "Vai", "RRRRRRRRRRR");
+	Person P15("Tapu", "Tapu", "IIIIIIIIIII");
+	Person P16("saif", "rahi", "OOOOOOOOOOO");
+	Person P17("Rakib", "Hasan", "BBBBBBBBBBB");
+	Person P18("Munna", "bhai", "CCCCCCCCCCC");
+	Person P19("Shahad", "Abdullah", "ZZZZZZZZZZZ");
+	Person P20("Salauddin", "Kashif", "FFFFFFFFFFF");
+	Person P21("Shahida", "Nasir", "DDDDDDDDDDD");
+	Person P22("Digital", "Hujur", "HHHHHHHHHHH");
+	Person P23("Nasima", "Akhter", "KKKKKKKKKKK");
+	Person P24("Liton", "Bepary", "EEEEEEEEEEE");
+	Person P25("Aiman", "Akash", "NNNNNNNNNNN");
+	Person P26("Osama", "Shishir", "11111111111");
+	Person P27("Neyamot", "Ali", "22222222222");
+	Person P28("Shaikot", "Hasan", "33333333333");
+	Person P29("Moinul", "Mahmud", "19921083512");
+	Person P30("Shawrid", "Shams", "19921083512");
+	PhoneNumber number1("01737552558", "GP");
+	Call call1("01671919344", "Robi", "01999900439", "banglalink", "19728014444", P1, Subordinate, 4250);
+	Call call2("01XXXXXXXXX", "GP", "01999900439", "banglalink", "19728014444", P2, Friend, 5250);
+	Call call3("01XXXXXXXXX", "GP", "01999900439", "banglalink", "19728014444", P1, Subordinate, 1000);
+	Call call4("01XXXXXXXXX", "GP", "01999900439", "banglalink", "19728014444", P3, Spouse, 16534);
+	Call call5("01XXXXXXXXX", "GP", "01999900439", "banglalink", "19728014444", P3, Child, 209864);
+	number1.enqueue_call(call1);
+	number1.enqueue_call(call2);
+	number1.enqueue_call(call3);
+	number1.enqueue_call(call4);
+	number1.enqueue_call(call5);
+	Call dummy;
+	number1.dequeue_call(dummy);
+	cout <<"\n"<< dummy.get_relationship() << "\t\t" << dummy.get_durationInSeconds()<<endl;
+	number1.dequeue_call(dummy);
+	cout << "\n"<<dummy.get_relationship() << "\t\t" << dummy.get_durationInSeconds()<<endl;
+	number1.dequeue_call(dummy);
+	cout << "\n"<<dummy.get_relationship() << "\t\t" << dummy.get_durationInSeconds()<<endl;
+	number1.dequeue_call(dummy);
+	cout << "\n" << dummy.get_relationship() << "\t\t" << dummy.get_durationInSeconds() << endl;
+	number1.dequeue_call(dummy);
+	cout << "\n" << dummy.get_relationship() << "\t\t" << dummy.get_durationInSeconds() << endl;
 	return 0;
 }
 

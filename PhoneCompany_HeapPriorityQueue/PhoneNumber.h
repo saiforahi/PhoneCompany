@@ -18,16 +18,17 @@ public:
 
 	void set_operatorName(string); //modifier
 	void enqueue_call(Call);
-	void dequeue_call();
+	void dequeue_call(Call&);
+	void Heapify_callList();
+	void ReheapDown(int, int);
+	void ReheapUp(int, int);
 	//list of accessors
-	void ReheapUp(int,int);
-	void ReheapDown(int,int);
 	bool is_call_list_empty();
 	bool is_call_list_full();
 	void swap(Call&,Call&);
 	string get_number();
 	string get_operatorName();
-	void print_queued_calls(int);
+	void print_queued_calls();
 	void print_details();
 };
 

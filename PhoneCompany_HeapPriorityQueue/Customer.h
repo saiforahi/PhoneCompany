@@ -22,7 +22,7 @@ public:
 	void delete_number(PhoneNumber);//modifier
 	void change_operatorName(PhoneNumber);//modifier
 	void enqueue_new_call(Call);
-	void dequeue_call(PhoneNumber);
+	//void dequeue_call(PhoneNumber);
 	bool is_Full();//accessor
 	PhoneNumber get_phoneNumber(PhoneNumber, bool&);//accessor
 	bool is_Empty();//accessor

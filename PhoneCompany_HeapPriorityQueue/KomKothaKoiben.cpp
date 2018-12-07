@@ -182,7 +182,7 @@ void KomKothaKoiben::customer_enqueueCall(string givenNID, Call newCall)
 	}
 }
 
-void KomKothaKoiben::customer_dequeueCall(string givenNID, PhoneNumber givenPhoneNumber)
+/*void KomKothaKoiben::customer_dequeueCall(string givenNID, PhoneNumber givenPhoneNumber)
 {
 	if (!customerList.empty())
 	{
@@ -196,7 +196,7 @@ void KomKothaKoiben::customer_dequeueCall(string givenNID, PhoneNumber givenPhon
 			}
 		}
 	}
-}
+}*/
 
 int KomKothaKoiben::get_length()
 {

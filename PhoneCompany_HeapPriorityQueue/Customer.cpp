@@ -114,7 +114,7 @@ void Customer::enqueue_new_call(Call newCall)
 	}
 }
 
-void Customer::dequeue_call(PhoneNumber numberToDequeueCall)
+/*void Customer::dequeue_call(PhoneNumber numberToDequeueCall)
 {
 	if (!numbers.empty())
 	{
@@ -128,7 +128,7 @@ void Customer::dequeue_call(PhoneNumber numberToDequeueCall)
 			}
 		}
 	}
-}
+}*/
 
 
 bool Customer::is_Full()

@@ -55,36 +55,24 @@ void PhoneNumber::enqueue_call(Call newItem)
 	}
 }
 
-void PhoneNumber::dequeue_call()
+void PhoneNumber::dequeue_call(Call & item)
 {
 	if (is_call_list_empty())
-		cout<<"no call to dequeue"<<endl;
+		cout << "no call to dequeue" << endl;
 	else {
+		item = queuedCalls[0];
 		queuedCalls[0] = queuedCalls[queuedCallsSize - 1];
 		queuedCallsSize--;
 		ReheapDown(0, queuedCallsSize - 1);
 	}
 }
 
-void PhoneNumber::ReheapUp(int root, int bottom)
+void PhoneNumber::Heapify_callList()
 {
-	
-	int parent=(bottom-1)/2;
-	if (parent < root)
-		return;
-	else if (queuedCalls[parent].get_relationship() > queuedCalls[bottom].get_relationship())
+	for (int index = (queuedCallsSize - 1) / 2; index >= 0; index--)
 	{
-		swap(queuedCalls[parent], queuedCalls[bottom]);
-		ReheapUp(root, parent);
+		ReheapDown(index, queuedCallsSize - 1);
 	}
-	else if (queuedCalls[bottom].get_relationship() == queuedCalls[parent].get_relationship())
-	{
-		if (queuedCalls[bottom].get_durationInSeconds() > queuedCalls[root].get_durationInSeconds()) {
-			swap(queuedCalls[parent], queuedCalls[bottom]);
-			ReheapUp(root, parent);
-		}
-	}
-	
 }
 
 void PhoneNumber::ReheapDown(int root, int bottom)
@@ -109,7 +97,7 @@ void PhoneNumber::ReheapDown(int root, int bottom)
 			swap(queuedCalls[root], queuedCalls[maxChild]);
 			ReheapDown(maxChild, bottom);
 		}
-		if (queuedCalls[root].get_relationship() == queuedCalls[maxChild].get_relationship()) {
+		else if (queuedCalls[root].get_relationship() == queuedCalls[maxChild].get_relationship()) {
 			if (queuedCalls[root].get_durationInSeconds() < queuedCalls[maxChild].get_durationInSeconds())
 			{
 				swap(queuedCalls[root], queuedCalls[maxChild]);
@@ -118,6 +106,28 @@ void PhoneNumber::ReheapDown(int root, int bottom)
 		}
 	}
 }
+
+
+void PhoneNumber::ReheapUp(int root, int bottom)
+{
+	int parent=(bottom-1)/2;
+	if (parent < root)
+		return;
+	else if (queuedCalls[parent].get_relationship() > queuedCalls[bottom].get_relationship())
+	{
+		swap(queuedCalls[parent], queuedCalls[bottom]);
+		ReheapUp(root, parent);
+	}	
+	else if (queuedCalls[bottom].get_relationship() == queuedCalls[parent].get_relationship())
+	{
+		if (queuedCalls[bottom].get_durationInSeconds() > queuedCalls[root].get_durationInSeconds()) {
+			swap(queuedCalls[parent], queuedCalls[bottom]);
+			ReheapUp(root, parent);
+		}
+	}
+}
+
+
 
 bool PhoneNumber::is_call_list_empty()
 {
@@ -148,23 +158,24 @@ string PhoneNumber::get_operatorName()
 	return operatorName;
 }
 
-void PhoneNumber::print_queued_calls(int root)
+void PhoneNumber::print_queued_calls()
 {
-	if (queuedCallsSize==0)
+	Call *demo;
+	for (int index = 0; index < queuedCallsSize; index++)
 	{
-		cout << "  \t\t\t\t\tno calls  " << endl;
+		demo[index] = queuedCalls[index];
 	}
-	else
-	{
-		queuedCalls[root].print_call();
-		ReheapDown(root+1, queuedCallsSize - 1);
-		print_queued_calls(root+1);
-	}
+
 }
+
 
 void PhoneNumber::print_details()
 {
 	cout << "\t\t" << operatorName << "\t\t" << number << endl;
 	cout << "\t\tCalls:" << endl;
-	print_queued_calls(0);
+	
+	for (int index = 0; index < queuedCallsSize; index++)
+	{
+		cout <<"\n"<< queuedCalls[index].get_relationship()<<"\t"<<queuedCalls[index].get_durationInSeconds() << endl;
+	}
 }
