@@ -5,8 +5,7 @@ using namespace std;
 
 PhoneNumber::PhoneNumber()
 {
-	queuedCalls = new Call[queuedCallsMaxSize];
-	queuedCallsSize = 0;
+	
 }
 
 PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
@@ -18,14 +17,12 @@ PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
 	else {
 		number = givenNumber;
 		operatorName = givenOperator;
-		queuedCalls = new Call[queuedCallsMaxSize];
-		queuedCallsSize = 0;
 	}
 }
 
 PhoneNumber::~PhoneNumber()
 {
-	delete[]queuedCalls;
+	
 }
 
 void PhoneNumber::set_operatorName(string givenName)
@@ -66,68 +63,6 @@ void PhoneNumber::dequeue_call(Call & item)
 		ReheapDown(0, queuedCallsSize - 1);
 	}
 }
-
-void PhoneNumber::Heapify_callList()
-{
-	for (int index = (queuedCallsSize - 1) / 2; index >= 0; index--)
-	{
-		ReheapDown(index, queuedCallsSize - 1);
-	}
-}
-
-void PhoneNumber::ReheapDown(int root, int bottom)
-{
-	int maxChild;
-	int rightChild;
-	int leftChild;
-	leftChild = root * 2 + 1;
-	rightChild = root * 2 + 2;
-	if (leftChild <= bottom)
-	{
-		if (leftChild == bottom)
-			maxChild = leftChild;
-		else
-		{
-			if (queuedCalls[leftChild].get_relationship() >= queuedCalls[rightChild].get_relationship())
-				maxChild = rightChild;
-			else
-				maxChild = leftChild;
-		}
-		if (queuedCalls[root].get_relationship() > queuedCalls[maxChild].get_relationship()) {
-			swap(queuedCalls[root], queuedCalls[maxChild]);
-			ReheapDown(maxChild, bottom);
-		}
-		else if (queuedCalls[root].get_relationship() == queuedCalls[maxChild].get_relationship()) {
-			if (queuedCalls[root].get_durationInSeconds() < queuedCalls[maxChild].get_durationInSeconds())
-			{
-				swap(queuedCalls[root], queuedCalls[maxChild]);
-				ReheapDown(maxChild, bottom);
-			}
-		}
-	}
-}
-
-
-void PhoneNumber::ReheapUp(int root, int bottom)
-{
-	int parent=(bottom-1)/2;
-	if (parent < root)
-		return;
-	else if (queuedCalls[parent].get_relationship() > queuedCalls[bottom].get_relationship())
-	{
-		swap(queuedCalls[parent], queuedCalls[bottom]);
-		ReheapUp(root, parent);
-	}	
-	else if (queuedCalls[bottom].get_relationship() == queuedCalls[parent].get_relationship())
-	{
-		if (queuedCalls[bottom].get_durationInSeconds() > queuedCalls[root].get_durationInSeconds()) {
-			swap(queuedCalls[parent], queuedCalls[bottom]);
-			ReheapUp(root, parent);
-		}
-	}
-}
-
-
 
 bool PhoneNumber::is_call_list_empty()
 {
