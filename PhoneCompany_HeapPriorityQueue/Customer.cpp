@@ -114,7 +114,9 @@ void Customer::enqueue_new_call(Call newCall)
 	}
 }
 
-void Customer::dequeue_call(PhoneNumber numberToDequeueCall)
+
+
+void Customer::dequeue_call(PhoneNumber numberToDequeueCall,Call & callToDequeue)
 {
 	if (!numbers.empty())
 	{
@@ -123,8 +125,7 @@ void Customer::dequeue_call(PhoneNumber numberToDequeueCall)
 		{
 			if (marker->get_number() == numberToDequeueCall.get_number() && marker->get_operatorName() == numberToDequeueCall.get_operatorName())
 			{
-				Call dummy;
-				marker->dequeue_call(dummy);
+				marker->dequeue_call(callToDequeue);
 				break;
 			}
 		}
