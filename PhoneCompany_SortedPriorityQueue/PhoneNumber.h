@@ -21,7 +21,7 @@ public:
 
 	void set_operatorName(string); //modifier
 	void enqueue_call(Call);
-	Call dequeue_call();
+	void dequeue_call(Call&);
 	//list of accessors
 	bool is_call_list_full();
 	bool is_call_list_empty();

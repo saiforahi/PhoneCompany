@@ -182,7 +182,7 @@ void KomKothaKoiben::customer_enqueueCall(string givenNID, Call newCall)
 	}
 }
 
-void KomKothaKoiben::customer_dequeueCall(string givenNID, PhoneNumber givenPhoneNumber)
+void KomKothaKoiben::customer_dequeueCall(string givenNID, PhoneNumber givenPhoneNumber,Call & dequeuedCallFromCustomer)
 {
 	if (!customerList.empty())
 	{
@@ -191,7 +191,7 @@ void KomKothaKoiben::customer_dequeueCall(string givenNID, PhoneNumber givenPhon
 		{
 			if (marker->get_NID() == givenNID)
 			{
-				marker->dequeue_call(givenPhoneNumber);
+				marker->dequeue_call(givenPhoneNumber, dequeuedCallFromCustomer);
 				break;
 			}
 		}
