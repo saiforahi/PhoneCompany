@@ -37,18 +37,18 @@ public:
 	~PhoneNumber();
 
 	void set_operatorName(string); //modifier
-	void enqueue_call(Call);
-	
+	void enqueue_call(Call);//modifier
+	void dequeue_call(Call&);//modifier
+
 	//list of accessors
-	string get_number();
-	string get_operatorName();
-	bool is_list_empty();
-	bool hasNextCall();
-	int get_call_list_size();
-	void dequeue_call(Call&);
-	Call get_next_call();
-	void print_queued_calls();
-	void print_details();
+	string get_number();//accessor
+	string get_operatorName();//accessor
+	bool is_list_empty();//accessor
+	bool hasNextCall();//accessor
+	int get_call_list_size();//accessor
+	Call get_next_call();//accessor
+	void print_queued_calls();//accessor
+	void print_details();//accessor
 };
 
 
