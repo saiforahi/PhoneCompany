@@ -14,5 +14,8 @@ public:
 	void swap(Call&, Call&);
 	void enqueue(Call);
 	void dequeue(Call&);
+	bool is_empty();
+	bool is_full();
+	int get_size();
 };
 

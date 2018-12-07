@@ -22,7 +22,7 @@ PhoneNumber::PhoneNumber(string givenNumber, string givenOperator)
 
 PhoneNumber::~PhoneNumber()
 {
-	
+	queuedCalls.~HeapType();
 }
 
 void PhoneNumber::set_operatorName(string givenName)
@@ -43,45 +43,26 @@ void PhoneNumber::set_operatorName(string givenName)
 
 void PhoneNumber::enqueue_call(Call newItem)
 {
-	if (queuedCallsSize >= queuedCallsMaxSize)
-		cout << "List is full" << endl;
-	else {
-		queuedCallsSize++;
-		queuedCalls[queuedCallsSize - 1] = newItem;
-		ReheapUp(0, queuedCallsSize - 1);
-	}
+	queuedCalls.enqueue(newItem);
 }
 
-void PhoneNumber::dequeue_call(Call & item)
+void PhoneNumber::dequeue_call(Call &dequeuedCall)
 {
-	if (is_call_list_empty())
-		cout << "no call to dequeue" << endl;
-	else {
-		item = queuedCalls[0];
-		queuedCalls[0] = queuedCalls[queuedCallsSize - 1];
-		queuedCallsSize--;
-		ReheapDown(0, queuedCallsSize - 1);
-	}
+	queuedCalls.dequeue(dequeuedCall);
 }
+
+
 
 bool PhoneNumber::is_call_list_empty()
 {
-	return queuedCallsSize==0 ;
+	return queuedCalls.is_empty() ;
 }
 
 bool PhoneNumber::is_call_list_full()
 {
-	return queuedCallsSize== queuedCallsMaxSize;
+	return queuedCalls.is_full();
 }
 
-
-void PhoneNumber::swap(Call & one, Call & two)
-{
-	Call temp;
-	temp = one;
-	one = two;
-	two = temp;
-}
 
 string PhoneNumber::get_number()
 {
@@ -93,14 +74,20 @@ string PhoneNumber::get_operatorName()
 	return operatorName;
 }
 
+int PhoneNumber::get_callList_size()
+{
+	return queuedCalls.get_size();
+}
+
 void PhoneNumber::print_queued_calls()
 {
-	Call *demo;
-	for (int index = 0; index < queuedCallsSize; index++)
+	HeapType dummy = queuedCalls;
+	while (!dummy.is_empty())
 	{
-		demo[index] = queuedCalls[index];
+		Call demo;
+		dummy.dequeue(demo);
+		demo.print_call();
 	}
-
 }
 
 
@@ -108,9 +95,5 @@ void PhoneNumber::print_details()
 {
 	cout << "\t\t" << operatorName << "\t\t" << number << endl;
 	cout << "\t\tCalls:" << endl;
-	
-	for (int index = 0; index < queuedCallsSize; index++)
-	{
-		cout <<"\n"<< queuedCalls[index].get_relationship()<<"\t"<<queuedCalls[index].get_durationInSeconds() << endl;
-	}
+	print_queued_calls();
 }

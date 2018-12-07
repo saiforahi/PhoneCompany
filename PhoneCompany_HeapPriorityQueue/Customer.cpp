@@ -123,7 +123,8 @@ void Customer::dequeue_call(PhoneNumber numberToDequeueCall)
 		{
 			if (marker->get_number() == numberToDequeueCall.get_number() && marker->get_operatorName() == numberToDequeueCall.get_operatorName())
 			{
-				marker->dequeue_call();
+				Call dummy;
+				marker->dequeue_call(dummy);
 				break;
 			}
 		}

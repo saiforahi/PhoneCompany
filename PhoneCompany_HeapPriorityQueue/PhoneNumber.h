@@ -22,9 +22,9 @@ public:
 	//list of accessors
 	bool is_call_list_empty();
 	bool is_call_list_full();
-	
 	string get_number();
 	string get_operatorName();
+	int get_callList_size();
 	void print_queued_calls();
 	void print_details();
 };

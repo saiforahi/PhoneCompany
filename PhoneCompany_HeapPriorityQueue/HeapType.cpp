@@ -1,5 +1,6 @@
 #include "HeapType.h"
-
+#include <iostream>
+using namespace std;
 
 
 HeapType::HeapType()
@@ -11,7 +12,7 @@ HeapType::HeapType()
 
 HeapType::~HeapType()
 {
-	delete[]calls;
+	queuedCallsSize = 0;
 }
 
 void HeapType::ReheapDown(int root, int bottom)
@@ -71,4 +72,42 @@ void HeapType::swap(Call & one, Call & two)
 	temp = one;
 	one = two;
 	two = temp;
+}
+
+void HeapType::enqueue(Call newCall)
+{
+	if (is_full())
+		cout << "List is full" << endl;
+	else {
+		queuedCallsSize++;
+		calls[queuedCallsSize - 1] = newCall;
+		ReheapUp(0, queuedCallsSize - 1);
+	}
+}
+
+void HeapType::dequeue(Call &dequeuedCall)
+{
+	if (is_empty())
+		cout << "no call to dequeue" << endl;
+	else {
+		dequeuedCall = calls[0];
+		calls[0] = calls[queuedCallsSize - 1];
+		queuedCallsSize--;
+		ReheapDown(0, queuedCallsSize - 1);
+	}
+}
+
+bool HeapType::is_empty()
+{
+	return queuedCallsSize==0;
+}
+
+bool HeapType::is_full()
+{
+	return queuedCallsSize==queuedCallsMaxSize;
+}
+
+int HeapType::get_size()
+{
+	return queuedCallsSize;
 }
