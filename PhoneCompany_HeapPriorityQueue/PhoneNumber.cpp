@@ -68,7 +68,6 @@ bool PhoneNumber::is_call_list_full()
 	return queuedCalls.is_full();
 }
 
-
 string PhoneNumber::get_number()
 {
 	return number;

@@ -20,4 +20,3 @@ public:
 	void make_empty();
 	bool hasNextCall();
 };
-

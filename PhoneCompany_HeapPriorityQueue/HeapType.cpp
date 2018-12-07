@@ -87,7 +87,8 @@ void HeapType::enqueue(Call newCall)
 {
 	if (is_full())
 	{
-		cout << "List is full,increasing size" << endl;
+		cout << "List is full" << endl;
+
 	}
 	else {
 		queuedCallsSize++;
@@ -110,12 +111,12 @@ void HeapType::dequeue(Call &dequeuedCall)
 
 bool HeapType::is_empty()
 {
-	return queuedCallsSize==0;
+	return queuedCallsSize == 0;
 }
 
 bool HeapType::is_full()
 {
-	return queuedCallsSize>=queuedCallsMaxSize;
+	return queuedCallsSize >= queuedCallsMaxSize;
 }
 
 int HeapType::get_size()
@@ -130,7 +131,5 @@ void HeapType::make_empty()
 
 bool HeapType::hasNextCall()
 {
-	return queuedCallsSize>=1;
+	return queuedCallsSize >= 1;
 }
-
-
