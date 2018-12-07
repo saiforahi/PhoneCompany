@@ -42,8 +42,10 @@ public:
 	//list of accessors
 	string get_number();
 	string get_operatorName();
-	
-	Call dequeue_call();
+	bool is_list_empty();
+	bool is_list_full();
+	int get_call_list_size();
+	void dequeue_call(Call&);
 	Call get_next_call();
 	void print_queued_calls();
 	void print_details();

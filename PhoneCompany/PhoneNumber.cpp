@@ -49,20 +49,28 @@ string PhoneNumber::get_operatorName()
 	return operatorName;
 }
 
+bool PhoneNumber::is_list_empty()
+{
+	return calls.empty();
+}
+
+int PhoneNumber::get_call_list_size()
+{
+	return calls.size();
+}
+
 void PhoneNumber::enqueue_call(Call newCall)
 {
 	calls.push(newCall);
 }
 
-Call PhoneNumber::dequeue_call()
+void PhoneNumber::dequeue_call(Call & dequeuedCall)
 {
 	if (!calls.empty())
 	{
-		Call demo = calls.top();
+		dequeuedCall = calls.top();
 		calls.pop();
-		return demo;
 	}
-	return Call();
 }
 
 Call PhoneNumber::get_next_call()

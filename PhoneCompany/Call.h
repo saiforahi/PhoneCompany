@@ -32,7 +32,7 @@ public:
 	string get_reciever_operator();
 	relationship get_relationship();//accessor
 	string get_duration();//accessor
-	string get_recieverNID();
+	string get_recieverNID();//accessor
 	int get_durationInSeconds();//accessor
 	Person get_caller();//modifier
 	void set_duration(int);//modifier

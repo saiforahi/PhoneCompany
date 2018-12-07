@@ -19,7 +19,7 @@ public:
 	void change_operatorName_of_customer(string, PhoneNumber);//modifier
 	void reset_database();//modifier
 	void customer_enqueueCall(string,Call);
-	void customer_dequeueCall(string, PhoneNumber);
+	void customer_dequeueCall(string, PhoneNumber,Call&);
 	void print_database();//accessors
 	int get_length();//accessor
 	bool is_empty();//accessor
