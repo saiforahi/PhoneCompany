@@ -69,15 +69,19 @@ int main()
 	database.insert_customer(C);
 	database.insert_customer(D);
 
+	//adding different numbers to existing customers
 	database.add_new_number(A.get_NID(), number2);
 	database.add_new_number(A.get_NID(), number3);
 	database.add_new_number(A.get_NID(), number4);
+
 	database.add_new_number(B.get_NID(), number6);
 	database.add_new_number(B.get_NID(), number7);
 	database.add_new_number(B.get_NID(), number8);
+
 	database.add_new_number(C.get_NID(), number10);
 	database.add_new_number(C.get_NID(), number11);
 	database.add_new_number(C.get_NID(), number12);
+
 	database.add_new_number(D.get_NID(), number14);
 	database.add_new_number(D.get_NID(), number15);
 	database.add_new_number(D.get_NID(), number16);
@@ -89,6 +93,7 @@ int main()
 	Call call3("01XXXXXXXXX", "GP", "01999900439", "banglalink", "19728014444", P1, Subordinate, 1000);
 	Call call4("01XXXXXXXXX", "GP", "01999900439", "banglalink", "19728014444", P3, Spouse, 16534);
 	Call call5("01XXXXXXXXX", "GP", "01999900439", "banglalink", "19728014444", P3, Child, 209864);
+
 	Call call6("01XXXXXXXXX", "GP", "01856561345", "robi", "19728014444", P4, Boss, 23982);
 	Call call7("01XXXXXXXXX", "GP", "01856561345", "robi", "19728014444", P5, Relatives, 28496);
 	Call call8("01XXXXXXXXX", "GP", "01856561345", "robi", "19728014444", P6, Parent, 26372);
@@ -99,12 +104,37 @@ int main()
 	Call call13("01XXXXXXXXX", "GP", "01555555608", "teletalk", "19728014444", P7, Sibling, 12250);
 	Call call14("01XXXXXXXXX", "GP", "01555555608", "teletalk", "19728014444", P6, Parent, 73632);
 	Call call15("01XXXXXXXXX", "GP", "01555555608", "teletalk", "19728014444", P20, Blocked, 9873);
+
 	Call call16("01XXXXXXXXX", "GP", "01786490167", "GP", "19728014444", P3, Spouse, 12250);
 	Call call17("01XXXXXXXXX", "GP", "01786490167", "GP", "19728014444", P19, Blocked, 12250);
 	Call call18("01XXXXXXXXX", "GP", "01786490167", "GP", "19728014444", P14, Acquaintance, 1250);
 	Call call19("01XXXXXXXXX", "GP", "01786490167", "GP", "19728014444", P14, Acquaintance, 16750);
 	Call call20("01XXXXXXXXX", "GP", "01786490167", "GP", "19728014444", P7, Sibling, 19730);
 
+
+	//declaring 20 call object for Customer C
+	Call call21("01671919344", "Robi", "01937554058", "banglalink", "19945017777", P1, Parent, 4250);
+	Call call22("01XXXXXXXXX", "banglalink", "01937554058", "banglalink", "19945017777", P2, Parent, 5250);
+	Call call23("01XXXXXXXXX", "teletalk", "01937554058", "banglalink", "19945017777", P1, Subordinate, 1000);
+	Call call24("01XXXXXXXXX", "teletalk", "01937554058", "banglalink", "19945017777", P3, Spouse, 16534);
+	Call call25("01XXXXXXXXX", "GP", "01937554058", "banglalink", "19945017777", P3, Child, 209864);
+	Call call26("01XXXXXXXXX", "teletalk", "01711000151", "GP", "19945017777", P4, Boss, 23982);
+	Call call27("01XXXXXXXXX", "teletalk", "01711000151", "GP", "19945017777", P5, Relatives, 28496);
+	Call call28("01XXXXXXXXX", "GP", "01711000151", "GP", "19945017777", P6, Subordinate, 26372);
+	Call call29("01XXXXXXXXX", "GP", "01711000151", "GP", "19945017777", P6, Parent, 18725);
+	Call call30("01XXXXXXXXX", "banglalink", "01711000151", "GP", "19945017777", P7, Sibling, 9853);//
+	Call call31("01XXXXXXXXX", "teletalk", "01929676123", "banglalink", "19945017777", P6, Parent, 2422422);
+	Call call32("01XXXXXXXXX", "banglalink", "01929676123", "banglalink", "19945017777", P6, Parent, 242424);
+	Call call33("01XXXXXXXXX", "GP", "01929676123", "banglalink", "19945017777", P7, Sibling, 12250);
+	Call call34("01XXXXXXXXX", "01929676123", "banglalink", "teletalk", "19945017777", P6, Parent, 73632);
+	Call call35("01XXXXXXXXX", "GP", "01929676123", "banglalink", "19945017777", P20, Blocked, 9873);
+	Call call36("01XXXXXXXXX", "banglalink", "01416444664", "KomKothaKoiben", "19945017777", P3, Spouse, 3444435);
+	Call call37("01XXXXXXXXX", "Robi", "01416444664", "KomKothaKoiben", "19945017777", P19, Blocked, 35352);
+	Call call38("01XXXXXXXXX", "Robi", "01416444664", "KomKothaKoiben", "19945017777", P14, Acquaintance, 24422);
+	Call call39("01XXXXXXXXX", "banglalink", "01416444664", "KomKothaKoiben", "19945017777", P14, Acquaintance, 434384);
+	Call call40("01XXXXXXXXX", "Robi", "01416444664", "KomKothaKoiben", "19945017777", P7, Sibling, 20085);
+
+	//adding calls to customer B 
 	database.customer_enqueueCall("19728014444", call1);
 	database.customer_enqueueCall("19728014444", call2);
 	database.customer_enqueueCall("19728014444", call3);
@@ -125,6 +155,28 @@ int main()
 	database.customer_enqueueCall("19728014444", call18);
 	database.customer_enqueueCall("19728014444", call19);
 	database.customer_enqueueCall("19728014444", call20);
+
+	//adding calls to customer C
+	database.customer_enqueueCall("19945017777", call21);
+	database.customer_enqueueCall("19945017777", call22);
+	database.customer_enqueueCall("19945017777", call23);
+	database.customer_enqueueCall("19945017777", call24);
+	database.customer_enqueueCall("19945017777", call25);
+	database.customer_enqueueCall("19945017777", call26);
+	database.customer_enqueueCall("19945017777", call27);
+	database.customer_enqueueCall("19945017777", call28);
+	database.customer_enqueueCall("19945017777", call29);
+	database.customer_enqueueCall("19945017777", call30);
+	database.customer_enqueueCall("19945017777", call31);
+	database.customer_enqueueCall("19945017777", call32);
+	database.customer_enqueueCall("19945017777", call33);
+	database.customer_enqueueCall("19945017777", call34);
+	database.customer_enqueueCall("19945017777", call35);
+	database.customer_enqueueCall("19945017777", call36);
+	database.customer_enqueueCall("19945017777", call37);
+	database.customer_enqueueCall("19945017777", call38);
+	database.customer_enqueueCall("19945017777", call39);
+	database.customer_enqueueCall("19945017777", call40);
 	database.print_database();
 	return 0;
 }

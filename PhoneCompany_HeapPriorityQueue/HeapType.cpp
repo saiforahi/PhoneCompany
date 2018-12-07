@@ -17,7 +17,7 @@ HeapType::~HeapType()
 
 void HeapType::ReheapDown(int root, int bottom)
 {
-	int maxChild;
+	int minChild;
 	int rightChild;
 	int leftChild;
 	leftChild = root * 2 + 1;
@@ -25,25 +25,32 @@ void HeapType::ReheapDown(int root, int bottom)
 	if (leftChild <= bottom)
 	{
 		if (leftChild == bottom)
-			maxChild = leftChild;
+			minChild = leftChild;
 		else
 		{
-			if (calls[leftChild].get_relationship() > calls[rightChild].get_relationship())
-				maxChild = rightChild;
-			else if (calls[leftChild].get_relationship() == calls[rightChild].get_relationship() && calls[leftChild].get_durationInSeconds() < calls[rightChild].get_durationInSeconds())
-				maxChild = rightChild;
-			else
-				maxChild = leftChild;
-		}
-		if (calls[root].get_relationship() > calls[maxChild].get_relationship()) {
-			swap(calls[root], calls[maxChild]);
-			ReheapDown(maxChild, bottom);
-		}
-		else if (calls[root].get_relationship() == calls[maxChild].get_relationship()) {
-			if (calls[root].get_durationInSeconds() > calls[maxChild].get_durationInSeconds())
+			if (calls[leftChild].get_relationship() < calls[rightChild].get_relationship())
+				minChild = leftChild;
+			else if (calls[leftChild].get_relationship() == calls[rightChild].get_relationship())
 			{
-				swap(calls[root], calls[maxChild]);
-				ReheapDown(maxChild, bottom);
+				if (calls[leftChild].get_durationInSeconds() < calls[rightChild].get_durationInSeconds())
+				{
+					minChild = rightChild;
+				}
+				else
+					minChild = leftChild;
+			}
+			else
+				minChild = rightChild;
+		}
+		if (calls[root].get_relationship() > calls[minChild].get_relationship()) {
+			swap(calls[root], calls[minChild]);
+			ReheapDown(minChild, bottom);
+		}
+		else if (calls[root].get_relationship() == calls[minChild].get_relationship()) {
+			if (calls[root].get_durationInSeconds() < calls[minChild].get_durationInSeconds())
+			{
+				swap(calls[root], calls[minChild]);
+				ReheapDown(minChild, bottom);
 			}
 		}
 	}
