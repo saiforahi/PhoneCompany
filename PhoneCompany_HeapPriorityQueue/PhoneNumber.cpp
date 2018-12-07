@@ -29,11 +29,11 @@ void PhoneNumber::set_operatorName(string givenName)
 {
 	if (givenName == "GP" || givenName == "gp")
 		operatorName = givenName;
-	else if (givenName == "BANGLALINK" || givenName == "banglalink")
+	else if (givenName == "BANGLALINK" || givenName == "banglalink" || givenName == "Banglalink")
 		operatorName = givenName;
-	else if (givenName == "ROBI" || givenName == "robi")
+	else if (givenName == "ROBI" || givenName == "robi" || givenName == "Robi")
 		operatorName = givenName;
-	else if (givenName == "TELETALK" || givenName == "teletalk")
+	else if (givenName == "TELETALK" || givenName == "teletalk" || givenName == "Teletalk")
 		operatorName = givenName;
 	else if (givenName == "KOMKOTHAKOIBEN" || givenName == "komkothekoiben" || givenName == "KomKothaKoiben")
 		operatorName = givenName;
@@ -102,7 +102,7 @@ void PhoneNumber::print_queued_calls()
 
 void PhoneNumber::print_details()
 {
-	cout << "\t\t" << operatorName << "\t\t" << number << endl;
+	cout << "\n\t\t" << operatorName << "\t\t" << number << endl;
 	cout << "\t\tCalls:" << endl;
 	print_queued_calls();
 }

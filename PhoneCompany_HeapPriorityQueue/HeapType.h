@@ -1,8 +1,9 @@
 #pragma once
 #include "Call.h"
-const int MAXIMUM_SIZE = 100;
+const int MAXIMUM_SIZE = 2;
 class HeapType
 {
+private:
 	Call* calls = nullptr;
 	int queuedCallsSize = 0;
 	int queuedCallsMaxSize = MAXIMUM_SIZE;
