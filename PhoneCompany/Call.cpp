@@ -5,7 +5,7 @@ Call::Call()
 {
 }
 
-Call::Call(string givenNumber, string givenOperatorName,string givenNumberToCall,string operatorOfNumberToCall,string givenRecieverNID,Person newPerson, relationship relationshipNumber, int givenDuration)
+Call::Call(string givenNumber, string givenOperatorName, string givenNumberToCall, string operatorOfNumberToCall, string givenRecieverNID, Person newPerson, relationship relationshipNumber, int givenDuration)
 {
 	if (givenNumber.size() == 11 && givenNumberToCall.size() == 11 && givenRecieverNID.size() == 11 && givenDuration > 0)
 	{
@@ -89,7 +89,7 @@ void Call::print_call()
 	switch (relationshipType)
 	{
 	case Spouse:
-		cout <<"\t\t\tSpouse\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
+		cout << "\t\t\tSpouse\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Child:
 		cout << "\t\t\tChild\t" << relationship(relationshipType) << "\t" << get_duration() << endl; break;
 	case Parent:
@@ -115,7 +115,7 @@ void Call::print_call()
 		cout << "\t\t\tBlocked\t" << relationship(relationshipType) << "\t" << get_duration() << endl;
 		break;
 	}
-	
+
 }
 
 Call::~Call()

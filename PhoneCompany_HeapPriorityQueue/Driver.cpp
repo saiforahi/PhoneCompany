@@ -126,7 +126,7 @@ int main()
 	Call call31("01XXXXXXXXX", "teletalk", "01929676123", "banglalink", "19945017777", P6, Parent, 2422422);
 	Call call32("01XXXXXXXXX", "banglalink", "01929676123", "banglalink", "19945017777", P6, Parent, 242424);
 	Call call33("01XXXXXXXXX", "GP", "01929676123", "banglalink", "19945017777", P7, Sibling, 12250);
-	Call call34("01XXXXXXXXX", "01929676123", "banglalink", "teletalk", "19945017777", P6, Parent, 73632);
+	Call call34("01XXXXXXXXX", "KomKothaKoiben", "01929676123", "banglalink", "19945017777", P6, Parent, 73632);
 	Call call35("01XXXXXXXXX", "GP", "01929676123", "banglalink", "19945017777", P20, Blocked, 9873);
 	Call call36("01XXXXXXXXX", "banglalink", "01416444664", "KomKothaKoiben", "19945017777", P3, Spouse, 3444435);
 	Call call37("01XXXXXXXXX", "Robi", "01416444664", "KomKothaKoiben", "19945017777", P19, Blocked, 35352);
