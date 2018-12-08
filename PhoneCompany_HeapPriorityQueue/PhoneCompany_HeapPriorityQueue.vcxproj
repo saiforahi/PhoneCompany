@@ -153,10 +153,10 @@
   <ItemGroup>
     <ClCompile Include="Call.cpp" />
     <ClCompile Include="Customer.cpp" />
+    <ClCompile Include="Driver.cpp" />
     <ClCompile Include="HeapType.cpp" />
     <ClCompile Include="KomKothaKoiben.cpp" />
     <ClCompile Include="Person.cpp" />
-    <ClCompile Include="PhoneCompany_HeapPriorityQueue.cpp" />
     <ClCompile Include="PhoneNumber.cpp" />
   </ItemGroup>
   <ItemGroup>
