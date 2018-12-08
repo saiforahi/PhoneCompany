@@ -7,17 +7,20 @@ Call::Call()
 
 Call::Call(string givenNumber, string givenOperatorName, string givenNumberToCall, string operatorOfNumberToCall, string givenRecieverNID, Person newPerson, relationship relationshipNumber, int givenDuration)
 {
-	callFromNumber.number = givenNumber;
-	callFromNumber.operatorName = givenOperatorName;
-	callToNumber.number = givenNumberToCall;
-	callToNumber.operatorName = operatorOfNumberToCall;
-	caller = newPerson;
-	recieverNID = givenRecieverNID;
-	relationshipType = relationshipNumber;
-	durationInSeconds = givenDuration;
-	hours = givenDuration / 3600;
-	minutes = (givenDuration % 3600) / 60;
-	seconds = (givenDuration % 3600) % 60;
+	if (givenNumber.size() == 11 && givenNumberToCall.size() == 11 && givenRecieverNID.size() == 11 && givenDuration > 0)
+	{
+		callFromNumber.number = givenNumber;
+		callFromNumber.operatorName = givenOperatorName;
+		callToNumber.number = givenNumberToCall;
+		callToNumber.operatorName = operatorOfNumberToCall;
+		caller = newPerson;
+		recieverNID = givenRecieverNID;
+		relationshipType = relationshipNumber;
+		durationInSeconds = givenDuration;
+		hours = givenDuration / 3600;
+		minutes = (givenDuration % 3600) / 60;
+		seconds = (givenDuration % 3600) % 60;
+	}
 }
 
 string Call::get_caller_number()

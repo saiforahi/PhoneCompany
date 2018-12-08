@@ -180,5 +180,3 @@ int main()
 	database.print_database();
 	return 0;
 }
-
-
